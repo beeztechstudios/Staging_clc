@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://www.clclaw.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
