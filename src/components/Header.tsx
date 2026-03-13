@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Mail, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -25,7 +25,7 @@ const Header = () => {
     <header className="w-full max-w-[834px] ">
       {/* Logo row */}
       <div className="bg-[#E5ECE3]/80">
-        <div className="w-full h-[107px]  px-4 sm:px-6 md:px-6 py-3 flex justify-between items-center">
+        <div className="w-full h-[107px]  px-4 sm:px-6 md:px-6 py-3 flex  justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -64,10 +64,21 @@ const Header = () => {
       </div>
 
       {/* Location tabs — desktop */}
-      <div className="bg-[#163C0F]/70 w-full h-[55px] border-b hidden sm:flex justify-between items-center px-4 sm:px-6">
+      <div className="bg-[#163C0F]/70 w-full h-[55px]  hidden sm:flex justify-between items-center px-4 sm:px-6">
 
-        <div className="flex items-center gap-[5px]">
-          <img src="/new/mailicon.svg" className="w-[9.5px] h-[9.5px] " alt="" />
+        <a
+          href="mailto:legal@clclaw.in"
+          className="flex items-center gap-[5px]"
+          aria-label="Email Commercial Law Chamber"
+        >
+          <Image
+            src="/new/mailIcon.svg"
+            width={12}
+            height={12}
+            className="w-[9.5px] h-[9.5px]"
+            alt=""
+            aria-hidden="true"
+          />
           <h3 style={{
             fontFamily: "Inter, sans-serif",
             fontWeight: 700,
@@ -80,11 +91,12 @@ const Header = () => {
             textTransform: "uppercase",
 
           }}>legal@clclaw.in</h3>
-        </div>
+        </a>
         <div className="flex justify-end gap-[25px]">
           {locations.map((location) => (
-            <span
+            <Link
               key={location}
+              href="/contact"
               className="text-white py-3 px-4 sm:px-0 "
               style={{
                 fontFamily: "Inter, sans-serif",
@@ -96,7 +108,7 @@ const Header = () => {
               }}
             >
               {location}
-            </span>
+            </Link>
           ))}
         </div>
 

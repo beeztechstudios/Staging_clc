@@ -43,7 +43,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
                 <Link href={item.href}>
                   <button
                     onClick={() => setActiveSection?.(item.key)}
-                    className="w-full text-left transition-colors"
+                    className={`w-full text-left transition-colors ${isActive ? 'bg-[#A6C89A]' : 'hover:bg-white/10'}`}
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontWeight: 400,
@@ -52,7 +52,6 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                       padding: "8px 14px",
-                      backgroundColor: isActive ? "#A6C89A" : "transparent",
                     }}
                   >
                     <span style={{ color: isActive ? "#163C0F" : "#FFFFFF" }}>
@@ -111,7 +110,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
                   fontSize: "9.4px",
                   lineHeight: "15px",
                   color: "#163C0F",
-                 
+
                 }}
               >
                 {s.subtitle}

@@ -59,10 +59,10 @@ export default function RightSidebar() {
             lineHeight: "18px",
             fontSize: "11.9px",
             color: "#22461B",
-            letterSpacing:"-0.25px",
-           
+            letterSpacing: "-0.25px",
+
           }}
-          
+
         >
           Distinctly Different
         </p>
@@ -86,18 +86,16 @@ export default function RightSidebar() {
         <div className="w-full h-[2px] bg-white opacity-40 mb-[5px]" />
         <div className="space-y-2">
           {featuredBlogs?.slice(0, 2).map((blog: BlogPostPreview) => (
-            <div key={blog._id} className="z ">
+            <div key={blog._id} className="group">
               <Link href={`/blog/${blog.slug.current}`}>
                 <h4
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 700,
                     fontSize: "11.6px",
-                    
-                    color: "#000000",
                     lineHeight: "14px"
                   }}
-                  className="group-hover:text-[#163C0F] transition-colors duration-200"
+                  className="text-black group-hover:text-[#a40502] transition-colors duration-200"
                 >
                   {blog.title}
                 </h4>
@@ -149,11 +147,9 @@ export default function RightSidebar() {
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 700,
                     fontSize: "11.6px",
-
-                    color: "#000000",
                     lineHeight: "14px"
                   }}
-                  className="group-hover:text-[#163C0F] transition-colors duration-200"
+                  className="text-black group-hover:text-[#a40502] transition-colors duration-200"
                 >
                   {news.title}
                 </h4>

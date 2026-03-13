@@ -87,7 +87,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
 
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen pt-[20px] flex flex-col items-center justify-center">
       {/* problem div */}
       <div className="flex flex-row items-start lg:justify-center  w-full max-w-[1600px]  px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}

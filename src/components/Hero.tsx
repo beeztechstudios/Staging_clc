@@ -42,9 +42,15 @@ const Hero = () => {
 
         <img src="/new/heroGlass.svg" className="absolute left-[360px] md:left-[360px] max-w-[800px] top-0 -translate-x-1/2 hidden md:block" alt="" />
         <img src="/new/heroGradient.svg" className="absolute left-1/2 -translate-x-1/2 w-full md:w-[80vw] max-w-[950px] top-0 -z-10 opacity-60 md:opacity-100" alt="" />
-        <div className="mx-auto max-w-2xl px-2">
+        <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
 
-          <h1 className="hero-text-title hero-title md:mt-[104px] mr-8 text-[#163C0F] mb-[6px]">
+          <h1
+            className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] md:mr-8 lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
+            style={{
+              fontFamily: "League Spartan, sans-serif",
+              fontWeight: 700,
+            }}
+          >
             Commitment to Legal Excellence.
           </h1>
 
@@ -53,17 +59,17 @@ const Hero = () => {
 
           </p>
 
-          <div className="flex flex-col sm:flex-row hero-buttons justify-center items-center gap-3 sm:gap-[12px]">
+          <div className="flex w-full flex-col hero-buttons justify-center items-center gap-3 sm:flex-row sm:gap-[12px]">
             <Link
               href="/contact"
-              className="hero-text-button bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white px-6 py-2.5 flex items-center justify-center gap-[10px] w-full sm:w-auto"
+              className="hero-text-button bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white flex min-h-[40px] w-full max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
             >
               Partner With Us <ArrowRight className="h-5 w-5" />
             </Link>
 
             <Link
               href="/contact"
-              className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-6 py-2.5 hover:bg-gray-50 transition-all w-full sm:w-auto">
+              className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[40px] w-full max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
               Review Firm Profile
 
             </Link>
@@ -235,7 +241,7 @@ const Hero = () => {
               role: "Associate Partner",
               degree: "Bachelor of Laws (LLB)",
               experience: "9+ years",
-              image: "/images/shreya.jpg",
+              image: "/images/divyanshi.jpeg",
               expertise: [
                 "GST Litigation and Advisory",
                 "Healthcare and Pharmaceutical Regulation",
