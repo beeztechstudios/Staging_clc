@@ -69,7 +69,7 @@ const Hero = () => {
             </Link>
 
             <Link
-              href="/contact"
+              href="/about"
               className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[40px] w-full max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
               Review Firm Profile
 
@@ -161,21 +161,25 @@ const Hero = () => {
           {[
             {
               title: "Direct Tax",
+              href: "/practice-area/direct-tax-practice",
               desc: "End-To-End Advisory By Experienced Taxation Lawyers, Covering Compliance And Dispute Resolution Across Corporate And Individual Tax Matters, Including Complex Assessments And High-Value Tax Litigation.",
             },
             {
               title: "Indirect Tax",
+              href: "/practice-area/indirect-tax-gst-customs",
               desc: "Comprehensive GST Lawyer Advisory, Compliance Management, And Representation In Complex Litigation, Including Classification Disputes, GST Input Tax Credit Rules, Investigation, And Enforcement Actions.",
             },
             {
               title: "Commercial & Regulatory Disputes",
+              href: "/practice-area/commercial-regulatory-disputes",
               desc: "Strategic Resolution Of High-Stakes Disputes, Combining Legal Precision Sector-Specific Insight, And Outcome-Oriented Strategy.",
             },
             {
               title: "Customs Law",
+              href: "/practice-area/customs-law-practice",
               desc: "Strategic Counsel In Cross-Border Trade, Customs Litigation, And Enforcement Actions.",
             },
-          ].map(({ title, desc }, index) => (
+          ].map(({ title, desc, href }, index) => (
             <div
               key={title}
               className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] overflow-hidden"
@@ -188,9 +192,9 @@ const Hero = () => {
               }
             >
               <div className="flex items-center px-[8px] py-[17px]">
-                <span className="hero-text-practice-title">
+                <Link href={href} className="hero-text-practice-title hover:underline">
                   {title}
-                </span>
+                </Link>
               </div>
 
               <div className="flex items-center px-[8px] py-[17px]">
@@ -245,7 +249,7 @@ const Hero = () => {
                 key={name}
                 className="pl-4 basis-full sm:basis-1/2"
               >
-                <div className="group relative rounded-[16px] border border-[#22461B]/30 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/50 hover:shadow-md">
+                <div className="group relative rounded-[16px] border border-[#22461B]/10 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/20 hover:shadow-md">
                   <a
                     href={linkedin}
                     target="_blank"
