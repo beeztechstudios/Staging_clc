@@ -46,8 +46,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     "news": "content",
   };
 
-  const cleanPath = pathname.replace("/", "").trim();
-  const activeSection = routeToSection[cleanPath] || "home";
+  const firstSegment = pathname.split("/").filter(Boolean)[0] || "";
+  const activeSection = routeToSection[firstSegment] || "home";
 
   useEffect(() => {
     setIsMobileSidebarOpen(false);

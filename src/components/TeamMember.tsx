@@ -17,6 +17,8 @@ interface TeamMemberProps {
     location: string;
     education: string[];
     achievements?: string[];
+    experienceHighlights?: string[];
+    recognitions?: string[];
   };
   variant?: "card" | "detailed";
 }
@@ -24,48 +26,23 @@ interface TeamMemberProps {
 const teamMembers = {
   vivek: {
     id: "vivek",
-    name: "Vivek Sarin: Founder & Leading Tax Litigation Expert",
+    name: "Vivek Sarin - Founding Partner",
 
     image: "/vivek.webp",
     experience: "20+ Years",
     location: "New Delhi",
-    shortDescription: "Founding Partner with 20+ years of experience in tax litigation, regulatory compliance, and commercial disputes across Supreme Court and High Courts.",
+    shortDescription: "Founding Partner with over two decades of practice in tax, regulatory, and commercial disputes before the Supreme Court of India and key tribunals.",
     fullDescription: [
-      "Vivek Sarin is the Founding Partner of Commercial Law Chambers, a New Delhi-based boutique firm specializing in Tax, Regulatory, and Commercial Disputes. With over 20 years of experience, he represents clients in high-stakes litigation before the Supreme Court, multiple High Courts, tribunals including ITAT, CESTAT, VAT Appellate Tribunals, and forums such as NCLT.",
-      "His expertise spans constitutional tax challenges, shareholder disputes, and CIRP matters, as well as regulatory pricing issues involving NPPA, TRAI, AERA, and Electricity Commissions. He advises leading companies across sectors—FMCG, Healthcare, Technology, and more—on CGST, VAT, Customs, Income Tax, and compliance strategy.",
-      "His blend of deep domestic insight and global perspective makes him a trusted advisor in complex legal landscapes."
+      "Vivek Sarin is the Founding Partner of Commercial Law Chamber, a New Delhi-based boutique taxation law firm, specialist and renowned for depth in Tax, Regulatory, and Commercial Disputes. Widely regarded as a best tax lawyer in India, he has over two decades of practice appearing in high-stakes matters before the Supreme Court of India and key tribunals.",
+      "His work as a tax lawyer spans constitutional tax litigation, complex shareholder disputes, commercial disputes, CIRP proceedings, and sector-specific regulatory challenges involving authorities such as the NPPA, TRAI, AERA, and various Electricity Commissions.",
+      "He counsels leading corporates on corporate tax and GST, direct and indirect tax, and broader compliance issues. Vivek Sarin is recognized among the top tax lawyers in India for navigating evolving legal frameworks."
     ],
     expertise: [
-      "High Court & Supreme Court Litigation",
       "Constitutional Tax Challenges",
-      "CIRP Matters",
+      "High Court & Supreme Court Litigation",
       "Regulatory & Compliance Strategy",
+      "CIRP Matters",
       "Shareholder Disputes",
-    ],
-    education: [
-      "Bachelor of Laws (LLB)",
-      "Member, Bar Council of India"
-    ]
-  },
-  shreyas: {
-    id: "shreyas",
-    name: "Shreyas Srivastava: Partner & Commercial Dispute Specialist",
-
-    image: "/shreya.webp",
-    experience: "12+ Years",
-    location: "New Delhi",
-    shortDescription: "Partner with 12+ years of experience in direct and indirect taxation, international trade remedies, and cross-border tax advisory matters.",
-    fullDescription: [
-      "Shreyas is a seasoned counsel with over 12 years of experience in direct and indirect taxation. At Commercial Law Chambers, he leads complex litigation and advisory mandates with a strategic focus on Income Tax, GST, and Customs matters, including international trade remedies such as anti-dumping and safeguard duties.",
-      "Shreyas has represented clients across a wide range of industries including FMCG, Consumer Durables, Aviation, Real Estate, Banking & Finance, Insurance, and Food & Beverage. His practice spans high-stakes tax disputes, regulatory representation, and advisory on cross-border trade issues.",
-      "Known for his research-driven and solution-oriented approach, Shreyas combines legal depth with industry insight to deliver pragmatic and effective outcomes for clients across forums including tribunals, High Courts, and the Supreme Court."
-    ],
-    expertise: [
-      "International Trade Remedies",
-      "Income Tax & GST",
-      "High-stakes Tax Disputes",
-      "Cross-border Tax Advisory",
-      "Regulatory Representation",
     ],
     education: [
       "Bachelor of Laws (LLB)",
@@ -74,11 +51,11 @@ const teamMembers = {
   },
   amit: {
     id: "amit",
-    name: "Amit Thukral: Partner & Chief Growth Officer",
+    name: "Amit Thukral - Partner and Chief Growth Officer",
     image: "/Amit.png",
     experience: "20+ Years",
     location: "New Delhi",
-    shortDescription: "Partner and Chief Growth Officer with 20+ years of post-qualification experience in complex legal services delivery, regulatory and commercial disputes, and institutional risk management.",
+    shortDescription: "Partner and Chief Growth Officer with over 20 years of post-qualification experience in complex legal services practice, delivery, and management.",
     fullDescription: [
       "Amit Thukral is the Partner and Chief Growth Officer at Commercial Law Chamber (CLC). With over 20 years of post-qualification experience, he is a seasoned expert in complex legal services practice, delivery, and management.",
       "He brings a unique resolution mindset born from a rich mix of in-house and external counsel experience, specializing in creating strategies for unprecedented legal issues at the intersection of law and policy.",
@@ -94,20 +71,53 @@ const teamMembers = {
     education: [
       "Master's degree in International Economic Law, University of Warwick",
       "Solicitor, England & Wales",
-      "Member, Bar Council of India",
+      "Member, Bar Council of India"
+    ],
+    experienceHighlights: [
+      "General Counsel Roles: Served in senior management for a top 5 Indian pharmaceutical major, a USD 70 billion global Agri-biotech firm, and a leading satellite pay TV provider.",
+      "Complex Litigation: Led a USD 100 million+ multi-party biotech license fee dispute and successfully obtained Supreme Court injunctions against significant regulatory penalties.",
+      "Strategic Transactions: Advised on high-value disinvestments and acquisitions, including a ~USD 650 million pharmaceutical deal.",
+      "Public Policy: Advised multi-stakeholder efforts in high-stakes public policy litigation at the Indian Supreme Court regarding business continuity."
+    ],
+    recognitions: [
       "Top 100 General Counsel, Business World (2020)",
       "GC Powerlist: India Teams, The Legal 500 (2019)",
       "Top 40 under 40, Legal Era (2018)"
     ]
   },
-  divyanshi: {
-    id: "Divyanshi Singh ",
-    name: "Divyanshi Singh : Associate Partner",
+  shreyas: {
+    id: "shreyas",
+    name: "Shreyas Srivastava - Partner",
 
     image: "/shreya.webp",
+    experience: "13+ Years",
+    location: "New Delhi",
+    shortDescription: "Partner with over 13 years of dedicated experience across direct and indirect tax, leading high-stakes tax litigation and advisory mandates.",
+    fullDescription: [
+      "Shreyas is a seasoned tax advisory counsel with over 13 years of dedicated experience across direct and indirect tax. At Commercial Law Chamber, he leads complex litigation as a specialized GST lawyer and income tax expert.",
+      "He handles high-stakes disputes for clients in FMCG, Aviation, and Banking, delivering outcomes aligned with commercial objectives.",
+      "Recognised for his rigorous research, strategic clarity, and solution-led approach, Shreyas brings a blend of deep legal expertise and industry understanding. He regularly represents clients before tribunals, various High Courts, and the Supreme Court, delivering outcomes that are both pragmatic and aligned with commercial objectives."
+    ],
+    expertise: [
+      "Income Tax & GST",
+      "International Trade Remedies",
+      "Cross-border Tax Advisory",
+      "High-stakes Tax Disputes",
+      "Regulatory Representation",
+    ],
+    education: [
+      "Bachelor of Laws (LLB)",
+      "Member, Bar Council of India"
+    ]
+  },
+  divyanshi: {
+    id: "divyanshi",
+    name: "Divyanshi Singh - Associate Partner",
+
+    image: "/images/divyanshi.jpeg",
     experience: "9+ Years",
     location: "New Delhi",
-    shortDescription: "Partner with 12+ years of experience in direct and indirect taxation, international trade remedies, and cross-border tax advisory matters.",
+    shortDescription: "Associate Partner with over 9 years of experience in healthcare regulation, direct and indirect taxation, and GST-focused advisory and dispute resolution matters.",
     fullDescription: [
       "Divyanshi is an Associate Partner with over 9 years of experience in healthcare regulation, direct and indirect taxation, and GST-focused advisory and dispute resolution matters. Her practice involves handling complex litigation and advisory assignments, with a particular emphasis on GST, regulatory compliance, and sector-specific tax issues.",
       "She has advised and represented clients across a wide range of sectors, including Healthcare, Pharmaceuticals, Consumer Goods, Retail, and Technology-enabled services. Her work encompasses GST litigation, regulatory representations, and advisory on intricate tax and compliance frameworks, often involving multi-layered statutory interpretation and procedural strategy.",
@@ -131,6 +141,9 @@ const teamMembers = {
 export { teamMembers };
 
 const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
+  const [memberName, ...designationParts] = member.name.split(" - ");
+  const memberDesignation = designationParts.join(" - ");
+
   if (variant === "detailed") {
     return (
       <div className=" p-2 sm:p-6">
@@ -165,13 +178,19 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Name + meta */}
             <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
-              <h2 className="hero-text-team-name mb-1">
-                {member.name}
+              <h2
+                className="hero-text-team-name font-bolder mt-2 mb-1 text-[#163C0F]"
+                style={{ fontSize: "clamp(34px, 4vw, 42px)", lineHeight: "1.1" }}
+              >
+                {memberName}
               </h2>
+              {memberDesignation && (
+                <p className="hero-text-team-role mb-2">{memberDesignation}</p>
+              )}
               <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 mb-4">
-                <span className="hero-text-team-role flex items-center gap-1">
+                {/* <span className="hero-text-team-role flex items-center gap-1">
                   <Briefcase className="w-3 h-3" /> {member.experience}
-                </span>
+                </span> */}
                 <span className="hero-text-team-role flex items-center gap-1">
                   <MapPin className="w-3 h-3" /> {member.location}
                 </span>
@@ -215,6 +234,38 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 ))}
               </div>
             </section>
+
+            {member.experienceHighlights && member.experienceHighlights.length > 0 && (
+              <section>
+                <h3 className="hero-text-section-heading text-[#336429] mb-3">
+                  Experience Highlights
+                </h3>
+                <ul className="space-y-2">
+                  {member.experienceHighlights.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-[8px] w-[6px] h-[6px] rounded-full bg-[#163C0F] shrink-0" />
+                      <p className="hero-text-practice-desc text-[#374151]">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {member.recognitions && member.recognitions.length > 0 && (
+              <section>
+                <h3 className="hero-text-section-heading text-[#336429] mb-3">
+                  Recognitions
+                </h3>
+                <ul className="space-y-2">
+                  {member.recognitions.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-[8px] w-[6px] h-[6px] rounded-full bg-[#163C0F] shrink-0" />
+                      <p className="hero-text-practice-desc text-[#374151]">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* Education */}
             <section>
@@ -271,9 +322,13 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       </div>
 
       {/* Name */}
-      <h2 className="hero-text-team-name mt-5 mb-1">
-        {member.name}
+      <h2 className="hero-text-team-name mt-5  mb-1">
+        {memberName}
       </h2>
+
+      {memberDesignation && (
+        <p className="hero-text-team-role mb-2">{memberDesignation}</p>
+      )}
 
       {/* Location */}
       <p className="hero-text-team-role mb-5 flex items-center justify-center gap-1">
@@ -286,7 +341,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       </p>
 
       {/* Expertise pills */}
-      <div className="w-full text-left mb-5">
+      {/* <div className="w-full text-left mb-5">
         <p className="hero-text-expertise-label mb-3">
           Expertise :
         </p>
@@ -300,7 +355,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* View Profile button */}
       <Dialog>
@@ -314,10 +369,11 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Team Member Profile</DialogTitle>
-            <DialogDescription>
-              <TeamMember member={member} variant="detailed" />
-            </DialogDescription>
+            {/* <DialogDescription className="sr-only">
+              Detailed profile information.
+            </DialogDescription> */}
           </DialogHeader>
+          <TeamMember member={member} variant="detailed" />
         </DialogContent>
       </Dialog>
     </div>

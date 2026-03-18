@@ -12,14 +12,14 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
   const pathname = usePathname();
 
   const menuItems = [
-    { label: "HOME", key: "home", href: "/", separator: true },
-    { label: "ABOUT CLC", key: "about", href: "/about" },
-    { label: "PRACTICE AREAS", key: "expertise", href: "/practice-area", separator: true },
+    { label: "HOME", key: "home", href: "/" },
+    { label: "ABOUT CLC", key: "about", href: "/about", separator: true },
+    { label: "PRACTICE AREAS", key: "expertise", href: "/practice-area" },
     { label: "OUR TEAM", key: "team", href: "/team" },
     { label: "INSIGHTS", key: "insights", href: "/insights" },
-    { label: "NEWS AND UPDATES", key: "content", href: "/news" },
+    { label: "NEWS AND UPDATES", key: "content", href: "/news", separator: true },
     { label: "CONTACT", key: "contact", href: "/contact", separator: true },
-    { label: "CAREER OPPORTUNITIES", key: "career", href: "/career" },
+    // { label: "CAREER OPPORTUNITIES", key: "career", href: "/career" },
   ];
 
   const sections = [
@@ -27,6 +27,14 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
     { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters" },
     { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions" },
   ];
+
+  const isMenuItemActive = (href: string, key: string) => {
+    if (href === "/") {
+      return pathname === "/" || activeSection === key;
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`) || activeSection === key;
+  };
 
   return (
     <div
@@ -37,7 +45,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
       <div className="bg-[#163C0F]">
         <nav className="flex flex-col">
           {menuItems.map((item, index) => {
-            const isActive = pathname === item.href || activeSection === item.key;
+            const isActive = isMenuItemActive(item.href, item.key);
             return (
               <React.Fragment key={index}>
                 <Link href={item.href}>

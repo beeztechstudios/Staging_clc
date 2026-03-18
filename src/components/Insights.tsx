@@ -45,11 +45,10 @@ const Insights = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 transition-all hero-text-meta ${
-                category === selectedCategory
-                  ? "bg-[#163C0F] !text-white"
-                  : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
-              }`}
+              className={`px-4 py-2 transition-all hero-text-meta ${category === selectedCategory
+                ? "bg-[#163C0F] !text-white"
+                : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
+                }`}
             >
               {category}
             </button>
@@ -102,11 +101,7 @@ const Insights = () => {
                   </div>
 
                   {/* Title */}
-                  <Link href={`/blog/${blog.slug.current}`} className="group mb-4 block">
-                    <h3 className="hero-text-card-title group-hover:text-[#1a4a1a] transition-colors">
-                      {blog.title}
-                    </h3>
-                  </Link>
+
 
                   {/* Featured image */}
                   {blog.featuredImage && (
@@ -128,6 +123,12 @@ const Insights = () => {
                       <Eye className="h-4 w-4" /> {blog.readTime}
                     </span>
                   </div>
+
+                  <Link href={`/blog/${blog.slug.current}`} className="group mb-4 block">
+                    <h3 className="hero-text-card-title group-hover:text-[#1a4a1a] transition-colors">
+                      {blog.title}
+                    </h3>
+                  </Link>
 
                   {/* Actions */}
                   <div className="flex gap-3 mt-auto">

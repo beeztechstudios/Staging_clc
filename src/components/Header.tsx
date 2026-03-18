@@ -21,6 +21,14 @@ const Header = () => {
     { label: "CAREER OPPORTUNITIES", href: "/career" },
   ];
 
+  const isMenuItemActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="w-full max-w-[834px] ">
       {/* Logo row */}
@@ -139,7 +147,7 @@ const Header = () => {
           {/* Nav links */}
           <nav className="flex flex-col">
             {menuItems.map((item, i) => {
-              const isActive = pathname === item.href;
+              const isActive = isMenuItemActive(item.href);
               return (
                 <Link
                   key={i}

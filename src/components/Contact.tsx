@@ -4,29 +4,25 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Delhi Office",
+    title: "Delhi",
     details: ["A1, Block A, Jangpura Extension,", "New Delhi - 110014, India"],
   },
   {
     icon: MapPin,
-    title: "Mumbai Office",
+    title: "Mumbai",
     details: ["76, 7th Floor, Bajaj Bhawan, Nariman Point,", "Mumbai – 400021, India"],
   },
   {
     icon: MapPin,
-    title: "Bengaluru Office",
+    title: "Bengaluru",
     details: ["No. 6/A, 3A Main Road, Ramaiah Layout,", "Bengaluru – 560 084, India"],
   },
   {
     icon: Mail,
-    title: "Email",
-    details: ["legal@clclaw.in", "Quick response within 24 hours"],
+    title: "Contact",
+    details: ["legal@clclaw.in", "+91 99999 20118"],
   },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: ["+91 99999 20118", "Strategic Legal Counsel"],
-  },
+
 ];
 
 const whyChoose = [
@@ -46,11 +42,11 @@ const Contact = () => {
       <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
         <div className="mx-auto max-w-2xl px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
-            Get In Touch With Us
+            Contact Us
           </p>
-          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
+          {/* <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
             Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We're here to protect your interests.
-          </p>
+          </p> */}
         </div>
       </section>
 
@@ -90,11 +86,11 @@ const Contact = () => {
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-[11px] border border-[#22461B]/30 rounded-[16px] hover:border-[#163C0F] transition-all"
+              className="flex items-start gap-4 p-[11px]  transition-all"
             >
-              <div className="bg-[#B3C7AB]/40 p-2 shrink-0">
+              {/* <div className="bg-[#B3C7AB]/40 p-2 shrink-0">
                 <info.icon className="h-5 w-5 text-[#163C0F]" />
-              </div>
+              </div> */}
               <div className="min-w-0 flex-1">
                 <h3 className="hero-text-practice-title mb-2">{info.title}</h3>
                 <div className="space-y-1">

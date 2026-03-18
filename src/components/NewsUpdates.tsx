@@ -66,11 +66,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
             <button
               key={type}
               onClick={() => setSelectedType(type)}
-              className={`px-4 py-2 transition-all hero-text-meta ${
-                type === selectedType
+              className={`px-4 py-2 transition-all hero-text-meta ${type === selectedType
                   ? "bg-[#163C0F] !text-white"
                   : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
-              }`}
+                }`}
             >
               {getTypeDisplayName(type)}
             </button>
@@ -99,11 +98,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                     )}
                   </div>
 
-                  <Link href={`/news/${news.slug.current}`} className="group">
-                    <h3 className="hero-text-card-title mb-3 group-hover:text-[#1a4a1a] transition-colors">
-                      {news.title}
-                    </h3>
-                  </Link>
+
                 </div>
 
                 <div className="flex flex-col flex-grow">
@@ -133,6 +128,12 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                       </div>
                     )}
                   </div>
+
+                  <Link href={`/news/${news.slug.current}`} className="group">
+                    <h3 className="hero-text-card-title mb-3 group-hover:text-[#1a4a1a] transition-colors">
+                      {news.title}
+                    </h3>
+                  </Link>
 
                   {/* Buttons */}
                   <div className="flex gap-3 mt-auto">

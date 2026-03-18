@@ -154,6 +154,9 @@ const Hero = () => {
         <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
           CORE PRACTICE AREAS
         </h2>
+        <p className="hero-text-body text-[#374151] mb-6">
+          Comprehensive legal solutions across key practice domains
+        </p>
         <div className="space-y-0">
           {[
             {

@@ -3,7 +3,7 @@ import { Building2, Users, BookOpen, Scale, Globe, Handshake, Shield, Eye, Light
 
 const stats = [
   { label: "Founded", value: "2008", numericValue: 2008, suffix: "" },
-  { label: "Partners", value: "3", numericValue: 2, suffix: "" },
+  { label: "Partners", value: "3", numericValue: 4, suffix: "" },
   { label: "Associates", value: "15+", numericValue: 15, suffix: "+" },
 ];
 
@@ -51,6 +51,29 @@ const values = [
     title: "Innovation",
     description: "Creative legal strategies and modern approaches to complex problems",
   },
+];
+
+const notableRepresentation = [
+  "Successfully secured stay and protection orders on issues relating to ITC mismatch, limitation expiry, non-consideration of replies, incorrect place of supply determination, and jurisdictional irregularities for over 75 clients for FY 2017-18 and 2018-19 before the High Courts of Orissa, Punjab & Haryana, Bihar, Delhi and Andhra Pradesh in complex GST disputes.",
+  "Successfully represented a garment trader in a challenge to coercive DGGI search proceedings, obtaining a landmark order from the Delhi High Court directing refund of tax deposited during the raid. Judgment reported.",
+  "Successfully represented an agro-chemical manufacturer before the Delhi High Court in quashing of bank account attachment orders, securing immediate restoration of banking operations. Judgment reported.",
+  "Successfully secured stay of adjudication proceedings in a Customs-DRI matter involving expiry of the statutory period for adjudication, and presently leading final arguments before the adjudicating authority.",
+  "Presently leading arguments before the Bombay High Court on the constitutional validity of taxation of Government services under the Finance Act, 1994 and multiple pre-GST and post-GST notifications, a matter with pan-India implications.",
+  "Successfully represented a telecom-media conglomerate in TDS disputes concerning the interplay of Section 194C and Section 194J, including issues of technical vs non-technical services, verification requirements, and industry-wide interpretational challenges.",
+  "Successfully represented a global technology major before the Supreme Court in a significant transfer pricing dispute concerning comparability analysis and appropriateness of TP methods (TNMM, CUP, Cost-Plus), setting persuasive value for similar matters.",
+  "Successfully represented the assessee before the Allahabad High Court in a landmark dispute involving apportionment of service and sale components in composite transactions, contributing to clarity in dual-tax scenarios.",
+  "Successfully represented a leading media house before the Karnataka High Court on the issue of abatement of local taxes while computing service tax liability, with favourable recognition of cascading-avoidance principles.",
+  "Successfully represented an assessee before the Madras High Court in challenging discriminatory local tax levies imposed by the State of Tamil Nadu, securing full relief.",
+  "Advised and represented over 120 corporates, MSMEs, and startups in GST audit objections, special audit proceedings, departmental investigations, and appellate disputes across India, including issues of classification, valuation, export-refund mismatches, and input tax credit restrictions.",
+  "Handled more than 50 writ petitions before various High Courts challenging system-generated GST notices, procedural violations, retrospective cancellation of GST registrations, denial of revocation applications, and erroneous suspension orders, securing consistent interim and final relief.",
+  "Successfully represented multiple multinational manufacturers and technology companies in anti-profiteering investigations and DGAP proceedings, achieving closure without adverse orders.",
+  "Successfully led complex customs valuation and exemption matters for over 30 importers, including disputes on special valuation branch (SVB) orders, related-party pricing, exemption notifications, and project import regulations.",
+  "Advised and represented leading e-commerce and logistics companies in nationwide investigations involving place-of-supply, intermediary classification, and cross-border service taxation issues.",
+  "Represented several Fortune 500 companies in litigation involving service tax/GST transitional credit (TRAN-1/TRAN-2), securing restoration or re-credit based on judicial precedents and equitable grounds.",
+  "Successfully assisted more than 40 clients in securing the release of seized goods and vehicles under GST, including cases involving alleged e-way bill mismatches, valuation discrepancies, and classification-based detentions.",
+  "Represented clients in complex income-tax matters involving reassessment under Sections 147/148, faceless assessment errors, and digital-hearing violations, obtaining quashing and remand orders for over 60 assesses across jurisdictions.",
+  "Advised large conglomerates and family-owned businesses on GST implications of corporate restructuring, slump sales, cross-border EPC contracts, captive service arrangements, and inter-unit transfer pricing.",
+  "Handled multi-state indirect tax due-diligence and pre-litigation reviews for M&A transactions.",
 ];
 
 const About = () => {
@@ -106,13 +129,15 @@ const About = () => {
       </section>
 
       {/* Our Approach */}
+
+      {/* Our Approach */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
         <h2 className="hero-text-section-heading text-[#336429] mb-[16px]">
           Our Approach
         </h2>
-        <p className="hero-text-subpara text-[#163C0F] mb-[16px]" style={{ textAlign: "left" }}>
+        {/* <p className="hero-text-subpara text-[#163C0F] mb-[16px]" style={{ textAlign: "left" }}>
           Methodology in handling complex legal matters
-        </p>
+          </p> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 border border-gray-100">
           {approaches.map(({ icon: Icon, title, description }, index) => {
@@ -123,9 +148,9 @@ const About = () => {
                 className="p-[11px] flex items-start gap-3 min-h-[110px]"
                 style={{ background: isGreen ? "#EBF3E8" : "#FFFFFF" }}
               >
-                <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
+                {/* <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
                   <Icon className="h-6 w-6 text-[#163C0F]/80" />
-                </div>
+                  </div> */}
                 <div>
                   <p className="hero-text-practice-title mb-[4px]">{title}</p>
                   <p className="hero-text-practice-desc">{description}</p>
@@ -141,16 +166,10 @@ const About = () => {
       {/* Values & Vision */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
         <h2 className="hero-text-section-heading text-[#336429] mb-[16px]">
-          Values &amp; Vision
+          Our Values
         </h2>
 
-        {/* Our Vision */}
-        <div className="border border-[#22461B]/30 rounded-[16px] p-[11px] mb-[24px]">
-          <h3 className="hero-text-practice-title mb-[6px]">Our Vision</h3>
-          <p className="hero-text-practice-desc">
-            To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients' commercial interests in the most complex and impactful matters.
-          </p>
-        </div>
+
 
         {/* Values — alternating gradient rows like Core Practice Areas */}
         <div className="space-y-0">
@@ -165,9 +184,9 @@ const About = () => {
               }
             >
               <div className="flex items-center gap-3 px-[8px] py-[17px]">
-                <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
+                {/* <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
                   <Icon className="h-6 w-6 text-[#163C0F]/80" />
-                </div>
+                  </div> */}
                 <span className="hero-text-practice-title">{title}</span>
               </div>
               <div className="flex items-center px-[8px] py-[17px]">
@@ -176,7 +195,31 @@ const About = () => {
             </div>
           ))}
         </div>
+        {/* Our Vision */}
+        <div className=" mt-[24px] rounded-[16px] p-[11px] mb-[24px]">
+          <h3 className="hero-text-practice-title mb-[6px]">Our Vision</h3>
+          <p className="hero-text-practice-desc">
+            To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients' commercial interests in the most complex and impactful matters.
+          </p>
+        </div>
       </section>
+      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[8px]">
+          Notable Representation and Courtroom Achievements
+        </h2>
+        <p className="hero-text-practice-title text-[#C52828] mb-[14px]">
+          Representative Litigation &amp; Advisory Experience
+        </p>
+
+        <ul className="list-disc pl-6 hero-text-body text-gray-800 space-y-4">
+          {notableRepresentation.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+
+        <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
+      </section>
+
     </div>
   );
 };
