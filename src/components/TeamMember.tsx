@@ -72,6 +72,34 @@ const teamMembers = {
       "Member, Bar Council of India"
     ]
   },
+  amit: {
+    id: "amit",
+    name: "Amit Thukral: Partner & Chief Growth Officer",
+    image: "/Amit.png",
+    experience: "20+ Years",
+    location: "New Delhi",
+    shortDescription: "Partner and Chief Growth Officer with 20+ years of post-qualification experience in complex legal services delivery, regulatory and commercial disputes, and institutional risk management.",
+    fullDescription: [
+      "Amit Thukral is the Partner and Chief Growth Officer at Commercial Law Chamber (CLC). With over 20 years of post-qualification experience, he is a seasoned expert in complex legal services practice, delivery, and management.",
+      "He brings a unique resolution mindset born from a rich mix of in-house and external counsel experience, specializing in creating strategies for unprecedented legal issues at the intersection of law and policy.",
+      "Recognized as a Top 100 General Counsel, Amit specializes in regulatory and commercial dispute resolution, compliance, and institutional risk management. He has led complex strategic mandates across forums like the Supreme Court of India, various state High Courts, and sectoral regulators, particularly within the Technology, Media, and Life Sciences sectors."
+    ],
+    expertise: [
+      "Regulatory & Commercial Dispute Resolution",
+      "Cross-Border Disputes & International Economic Law",
+      "Institutional Risk Management & Corporate Governance",
+      "Life Sciences, Agri-Biotech & Pharmaceutical Law",
+      "Technology, Media & Telecom (TMT) Regulation",
+    ],
+    education: [
+      "Master's degree in International Economic Law, University of Warwick",
+      "Solicitor, England & Wales",
+      "Member, Bar Council of India",
+      "Top 100 General Counsel, Business World (2020)",
+      "GC Powerlist: India Teams, The Legal 500 (2019)",
+      "Top 40 under 40, Legal Era (2018)"
+    ]
+  },
   divyanshi: {
     id: "Divyanshi Singh ",
     name: "Divyanshi Singh : Associate Partner",

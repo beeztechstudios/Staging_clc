@@ -2,11 +2,14 @@
 import gsap from "gsap";
 import { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import Footer from "@/components/Footer";
 import { X } from "lucide-react";
+
+const DISCLAIMER_CONSENT_KEY = "clc-disclaimer-consent";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -14,6 +17,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   const rightSidebarRef = useRef<HTMLDivElement>(null);
 
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   // Pages that benefit from sidebars
   const sidebarPages = [
@@ -85,9 +89,84 @@ export default function Layout({ children }: { children: ReactNode }) {
     return () => ctx.revert();
   }, [pathname, showSidebars]);
 
+  useEffect(() => {
+    try {
+      const consent = window.localStorage.getItem(DISCLAIMER_CONSENT_KEY);
+      if (consent !== "accepted") {
+        setShowDisclaimer(true);
+      }
+    } catch {
+      setShowDisclaimer(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!showDisclaimer) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [showDisclaimer]);
+
+  const handleAgreeDisclaimer = () => {
+    window.localStorage.setItem(DISCLAIMER_CONSENT_KEY, "accepted");
+    setShowDisclaimer(false);
+  };
+
+  const handleDisagreeDisclaimer = () => {
+    window.localStorage.setItem(DISCLAIMER_CONSENT_KEY, "rejected");
+    window.location.href = "https://www.google.com";
+  };
+
   return (
 
     <div className="min-h-screen pt-[20px] flex flex-col items-center justify-center">
+      {showDisclaimer && (
+        <div className="fixed inset-0 z-[100] bg-black/70 px-4 py-6 sm:px-6 flex items-center justify-center">
+          <div className="w-full max-w-2xl rounded-2xl border border-[#22461B]/30 bg-white shadow-2xl">
+            <div className="border-b border-[#22461B]/20 px-5 py-4 sm:px-6 sm:py-5">
+              <h2 className="hero-text-section-heading text-[#163C0F]">Disclaimer</h2>
+              <p className="hero-text-team-role text-[#374151] mt-1">Please review before continuing.</p>
+            </div>
+
+            <div className="max-h-[50vh] overflow-y-auto px-5 py-4 sm:px-6 text-left space-y-4">
+              <p className="hero-text-body text-[#374151]">
+                The Bar Council of India does not permit advertisement or solicitation by professionals in the field of law and taxation. By accessing this website, you acknowledge that you are seeking information about CLC, voluntarily and that there has been no form of solicitation, advertisement, or inducement by the firm or its members. The content available on this website is intended solely for informational purposes and should not be construed as legal, tax, or professional advice, nor as a substitute for formal consultation. Accessing or using this website does not create any client-professional relationship. While reasonable care has been taken to ensure the accuracy of the information, CLC makes no representations or warranties regarding its completeness or reliability and shall not be liable for any actions taken based on the website content. For specific advice, users are encouraged to seek formal professional engagement.
+              </p>
+              <p className="hero-text-body text-[#374151]">
+                By clicking Agree, you confirm that you have read and accepted the disclaimer and related policies.
+              </p>
+              <p className="hero-text-team-role text-[#163C0F]">
+                Read full details: {" "}
+                <Link href="/terms-and-conditions" className="underline hover:text-[#336429]">Terms &amp; Conditions</Link>
+                {" "}|{" "}
+                <Link href="/privacy-policy" className="underline hover:text-[#336429]">Privacy Policy</Link>
+              </p>
+            </div>
+
+            <div className="border-t border-[#22461B]/20 px-5 py-4 sm:px-6 flex flex-col sm:flex-row gap-3 sm:justify-end">
+              <button
+                type="button"
+                onClick={handleDisagreeDisclaimer}
+                className="hero-text-button border border-[#163C0F]/30 text-[#163C0F] bg-white px-4 py-2 rounded-md hover:bg-[#F3F7F1] transition-colors"
+              >
+                Disagree
+              </button>
+              <button
+                type="button"
+                onClick={handleAgreeDisclaimer}
+                className="hero-text-button bg-[#163C0F] text-white px-4 py-2 rounded-md hover:bg-[#1E4E15] transition-colors"
+              >
+                Agree
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* problem div */}
       <div className="flex flex-row items-start lg:justify-center  w-full max-w-[1600px]  px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}

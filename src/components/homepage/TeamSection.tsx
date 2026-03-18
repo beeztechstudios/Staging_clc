@@ -3,6 +3,7 @@ import Image from "next/image";
 const team = [
   { name: "Vivek Sarin", designation: "Partner", image: "https://res.cloudinary.com/ddbu8cm4z/image/upload/v1764677693/vivek_u4uf7o.jpg" },
   { name: "Shreyas Srivastava", designation: "Partner", image: "https://res.cloudinary.com/ddbu8cm4z/image/upload/v1764677693/shreya_t2gey6.jpg" },
+  { name: "Amit Thukral", designation: "Partner and Chief Growth Officer", image: "/Amit.png" },
 ];
 
 export default function TeamSection() {
@@ -13,7 +14,7 @@ export default function TeamSection() {
           Our Team
         </h2>
 
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((m, i) => (
             <div key={i} className="team-card">
               <div className="aspect-square relative">

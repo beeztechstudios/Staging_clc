@@ -76,6 +76,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -101,75 +102,94 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes bounce-slow {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
+
 @keyframes slide-in-left {
   from {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes slide-in-right {
   from {
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes scale-in {
   from {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 @keyframes float-slow {
+
   0%,
   100% {
     transform: translateY(0) translateX(0) rotate(0deg);
   }
+
   33% {
     transform: translateY(-20px) translateX(10px) rotate(5deg);
   }
+
   66% {
     transform: translateY(10px) translateX(-10px) rotate(-5deg);
   }
 }
+
 @keyframes float-medium {
+
   0%,
   100% {
     transform: translateY(0) translateX(0) scale(1);
   }
+
   50% {
     transform: translateY(-30px) translateX(15px) scale(1.1);
   }
 }
+
 @keyframes pattern-shift {
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(40px, 40px);
   }
@@ -178,24 +198,31 @@
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
 }
+
 .animate-bounce-slow {
   animation: bounce-slow 3s ease-in-out infinite;
 }
+
 .animate-slide-in-left {
   animation: slide-in-left 0.6s ease-out forwards;
 }
+
 .animate-slide-in-right {
   animation: slide-in-right 0.6s ease-out forwards;
 }
+
 .animate-scale-in {
   animation: scale-in 0.6s ease-out forwards;
 }
+
 .animate-float-slow {
   animation: float-slow 20s ease-in-out infinite;
 }
+
 .animate-float-medium {
   animation: float-medium 15s ease-in-out infinite;
 }
+
 .animate-pattern-shift {
   animation: pattern-shift 30s linear infinite;
 }
@@ -220,15 +247,23 @@ p.hero-text-title,
   line-height: 1.2;
   letter-spacing: 0.5px;
 }
+
 @media (min-width: 768px) {
+
   h1.hero-text-title,
   p.hero-text-title,
-  .hero-text-title { font-size: 44px; }
+  .hero-text-title {
+    font-size: 44px;
+  }
 }
+
 @media (min-width: 1024px) {
+
   h1.hero-text-title,
   p.hero-text-title,
-  .hero-text-title { font-size: clamp(30px, 8vw, 50px); }
+  .hero-text-title {
+    font-size: clamp(30px, 8vw, 50px);
+  }
 }
 
 /* Sub-heading paragraph — "Trusted by corporations…" */
@@ -240,8 +275,12 @@ p.hero-text-title,
   letter-spacing: 0px;
   text-align: center;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-subpara { font-size: 14px; line-height: 18px; }
+  .hero-text-subpara {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 
 /* CTA Buttons */
@@ -253,8 +292,11 @@ p.hero-text-title,
   letter-spacing: 0px;
   text-align: center;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-button { font-size: 14.4px; }
+  .hero-text-button {
+    font-size: 14.4px;
+  }
 }
 
 /* Stats counter number */
@@ -265,11 +307,17 @@ p.hero-text-title,
   line-height: 48px;
   text-align: center;
 }
+
 @media (min-width: 768px) {
-  .hero-text-counter { font-size: 30px; }
+  .hero-text-counter {
+    font-size: 30px;
+  }
 }
+
 @media (min-width: 1024px) {
-  .hero-text-counter { font-size: clamp(22px, 3.5vw, 32px); }
+  .hero-text-counter {
+    font-size: clamp(22px, 3.5vw, 32px);
+  }
 }
 
 /* Stats label — "CASES WON" etc. */
@@ -280,11 +328,17 @@ p.hero-text-title,
   text-align: center;
   text-transform: uppercase;
 }
+
 @media (min-width: 768px) {
-  .hero-text-stat-label { font-size: 14px; }
+  .hero-text-stat-label {
+    font-size: 14px;
+  }
 }
+
 @media (min-width: 1024px) {
-  .hero-text-stat-label { font-size: clamp(10px, 1.5vw, 14px); }
+  .hero-text-stat-label {
+    font-size: clamp(10px, 1.5vw, 14px);
+  }
 }
 
 /* Section heading — "WELCOME TO…", "OUR DISTINCTION", etc. */
@@ -296,8 +350,12 @@ p.hero-text-title,
   letter-spacing: 0px;
   text-transform: uppercase;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-section-heading { font-size: clamp(16px, 2.5vw, 18px); line-height: 24px; }
+  .hero-text-section-heading {
+    font-size: clamp(16px, 2.5vw, 18px);
+    line-height: 24px;
+  }
 }
 
 /* Body paragraph — welcome text, distinction cells */
@@ -307,10 +365,14 @@ p.hero-text-title,
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0px;
-  text-transform: capitalize;
+  text-transform: none;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-body { font-size: clamp(16.4px, 1.8vw, 14.4px); line-height: 20px; }
+  .hero-text-body {
+    font-size: clamp(16.4px, 1.8vw, 14.4px);
+    line-height: 20px;
+  }
 }
 
 /* Distinction grid cell text */
@@ -320,11 +382,15 @@ p.hero-text-title,
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: 0px;
-  text-transform: capitalize;
+  text-transform: none;
   color: #111827;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-distinction { font-size: clamp(14px, 1.8vw, 16px); line-height: 1.4; }
+  .hero-text-distinction {
+    font-size: clamp(14px, 1.8vw, 16px);
+    line-height: 1.4;
+  }
 }
 
 /* Practice area title */
@@ -334,11 +400,15 @@ p.hero-text-title,
   font-size: 20px;
   line-height: 26px;
   letter-spacing: 0.01em;
-  text-transform: capitalize;
+  text-transform: none;
   color: #163C0F;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-practice-title { font-size: clamp(16px, 1.8vw, 16px); line-height: 20px; }
+  .hero-text-practice-title {
+    font-size: clamp(16px, 1.8vw, 16px);
+    line-height: 20px;
+  }
 }
 
 /* Practice area description */
@@ -347,11 +417,15 @@ p.hero-text-title,
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
-  text-transform: capitalize;
+  text-transform: none;
   color: #000000;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-practice-desc { font-size: clamp(14.4px, 1.8vw, 14.4px); line-height: 18px; }
+  .hero-text-practice-desc {
+    font-size: clamp(14.4px, 1.8vw, 14.4px);
+    line-height: 18px;
+  }
 }
 
 /* Team member name */
@@ -362,8 +436,12 @@ p.hero-text-title,
   line-height: 28px;
   color: #163C0F;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-team-name { font-size: clamp(16px, 1.8vw, 16px); line-height: 26px; }
+  .hero-text-team-name {
+    font-size: clamp(16px, 1.8vw, 16px);
+    line-height: 26px;
+  }
 }
 
 /* Team member role / degree */
@@ -374,8 +452,12 @@ p.hero-text-title,
   line-height: 24px;
   color: #5A6F55;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-team-role { font-size: clamp(14px, 1.8vw, 14px); line-height: 21px; }
+  .hero-text-team-role {
+    font-size: clamp(14px, 1.8vw, 14px);
+    line-height: 21px;
+  }
 }
 
 /* Team expertise label */
@@ -385,8 +467,11 @@ p.hero-text-title,
   font-size: 17px;
   color: #336429;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-expertise-label { font-size: clamp(14.4px, 1.8vw, 14.4px); }
+  .hero-text-expertise-label {
+    font-size: clamp(14.4px, 1.8vw, 14.4px);
+  }
 }
 
 /* Team expertise tag */
@@ -397,8 +482,12 @@ p.hero-text-title,
   line-height: 20px;
   color: #5A6F55;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-expertise-tag { font-size: clamp(12px, 1.8vw, 10px); line-height: 14px; }
+  .hero-text-expertise-tag {
+    font-size: clamp(12px, 1.8vw, 10px);
+    line-height: 14px;
+  }
 }
 
 /* Article/detail page title */
@@ -410,8 +499,12 @@ p.hero-text-title,
   letter-spacing: 0.5px;
   color: #163C0F;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-article-title { font-size: clamp(22px, 4vw, 38px); line-height: 1.2; }
+  .hero-text-article-title {
+    font-size: clamp(22px, 4vw, 38px);
+    line-height: 1.2;
+  }
 }
 
 /* Article meta — date, read time, back link */
@@ -421,8 +514,11 @@ p.hero-text-title,
   font-size: 14px;
   color: #5A6F55;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-meta { font-size: 13px; }
+  .hero-text-meta {
+    font-size: 13px;
+  }
 }
 
 /* Article body content wrapper */
@@ -433,8 +529,12 @@ p.hero-text-title,
   line-height: 28px;
   color: #1F2937;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-article-body { font-size: clamp(14px, 1.8vw, 16px); line-height: 26px; }
+  .hero-text-article-body {
+    font-size: clamp(14px, 1.8vw, 16px);
+    line-height: 26px;
+  }
 }
 
 /* Card title — blog/news listing cards */
@@ -445,8 +545,11 @@ p.hero-text-title,
   line-height: 1.4;
   color: #163C0F;
 }
+
 @media (min-width: 1024px) {
-  .hero-text-card-title { font-size: 16px; }
+  .hero-text-card-title {
+    font-size: 16px;
+  }
 }
 
 /* Experience badge */
@@ -462,21 +565,15 @@ p.hero-text-title,
 -------------------------------- */
 .bg-law-texture {
   background-image:
-    radial-gradient(
-      circle at 25% 25%,
+    radial-gradient(circle at 25% 25%,
       rgba(33, 72, 19, 0.02) 1px,
-      transparent 1px
-    ),
-    radial-gradient(
-      circle at 75% 75%,
+      transparent 1px),
+    radial-gradient(circle at 75% 75%,
       rgba(249, 190, 29, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      135deg,
+      transparent 1px),
+    linear-gradient(135deg,
       rgba(255, 255, 255, 0.8) 0%,
-      rgba(248, 250, 252, 0.9) 100%
-    );
+      rgba(248, 250, 252, 0.9) 100%);
   background-size:
     40px 40px,
     60px 60px,

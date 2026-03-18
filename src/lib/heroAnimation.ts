@@ -66,7 +66,7 @@ export default function HeroAnimations() {
 
         gsap.to(obj, {
           val: value,
-          duration: 5,
+          duration: 1.4,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
@@ -106,7 +106,7 @@ export default function HeroAnimations() {
         ease: "power3.out",
       });
     });
-    
+
 
     return () => ctx.revert();
   }, []);

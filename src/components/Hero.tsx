@@ -1,8 +1,9 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import HeroAnimations from "@/lib/heroAnimation";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 const distinctions = [
   {
     src: "/vivek.webp",
@@ -112,7 +113,7 @@ const Hero = () => {
 
         <div className="hero-text-body text-gray-800 space-y-4">
           <p>
-            Established in 2008, the Commercial Law Chamber (CLC) is a boutique law firm widely recognized for its specialized tax advisory and high-stakes dispute resolution practice. As one of the top taxation law firms in India, we maintain a strong focus on the Goods and Services Tax Act and Customs laws. Led by the team of best GST lawyers in Delhi and supported by a team of 15 associates, CLC delivers strategic, research-driven, and commercially aligned legal solutions across complex Tax and Commercial Disputes.
+            Established in 2008, the <strong>Commercial Law Chamber (CLC)</strong> is a <strong>boutique law firm</strong> widely recognized for its specialized tax advisory and high-stakes dispute resolution practice. As one of the <strong>top taxation law firms in India</strong>, we maintain a strong focus on the <strong>Goods and Services Tax Act</strong> and Customs laws. Led by the team of <strong>best GST lawyers in Delhi</strong> and supported by a team of 15 associates, CLC delivers strategic, research-driven, and commercially aligned legal solutions across complex <strong>Tax and Commercial Disputes</strong>.
           </p>
           <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
         </div>
@@ -206,108 +207,83 @@ const Hero = () => {
           OUR TEAM
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {[
-            {
-              name: "Vivek Sarin",
-              role: "Founding Partner",
-              degree: "Bachelor of Laws (LLB)",
-              experience: "20+ years",
-              image: "/images/vivek.jpg",
-              expertise: [
-                "High Court & Supreme Court Litigation",
-                "Constitutional Tax Challenges",
-                "CIRP Matters",
-                "Regulatory & Compliance Strategy",
-                "Shareholder Disputes",
-              ],
-            },
-            {
-              name: "Shreyas Shrivastava",
-              role: "Partner",
-              degree: "Bachelor of Laws (LLB)",
-              experience: "12+ years",
-              image: "/images/shreya.jpg",
-              expertise: [
-                "International Trade Remedies",
-                "Income Tax & GST",
-                "High-stakes Tax Disputes",
-                "Cross-border Tax Advisory",
-                "Regulatory Representation",
-              ],
-            },
-            {
-              name: "Divyanshi Singh",
-              role: "Associate Partner",
-              degree: "Bachelor of Laws (LLB)",
-              experience: "9+ years",
-              image: "/images/divyanshi.jpeg",
-              expertise: [
-                "GST Litigation and Advisory",
-                "Healthcare and Pharmaceutical Regulation",
-                "Direct and Indirect Tax Advisory",
-                "Regulatory Representation",
-                "Complex Tax and Compliance Disputes",
-              ],
-            },
-          ].map(({ name, role, degree, experience, image, expertise }) => (
-            <div
-              key={name}
-              className=" border border-[#22461B]/30  rounded-[16px] p-2 flex flex-col items-center text-center"
-            >
-              {/* Avatar + experience badge */}
-              <div className="relative mb-[10px]">
-                <div className="w-[88px] h-[88px] rounded-full overflow-hidden border-2 border-gray-100">
-                  <img
-                    src={image}
-                    alt={name}
-                    className="w-full h-full object-cover"
-                  />
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full px-1 sm:px-10"
+        >
+          <CarouselContent className="-ml-4">
+            {[
+              {
+                name: "Vivek Sarin",
+                role: "Founding Partner",
+                image: "/images/vivek.jpg",
+                linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
+              },
+              {
+                name: "Amit Thukral",
+                role: "Partner & Chief Growth Officer",
+                image: "/Amit.png",
+                linkedin: "https://www.linkedin.com/in/amitthukral/",
+              },
+              {
+                name: "Shreyas Srivastava",
+                role: "Partner",
+                image: "/images/shreya.jpg",
+                linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
+              },
+              {
+                name: "Divyanshi Singh",
+                role: "Associate Partner",
+                image: "/images/divyanshi.jpeg",
+                linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
+              },
+            ].map(({ name, role, image, linkedin }) => (
+              <CarouselItem
+                key={name}
+                className="pl-4 basis-full sm:basis-1/2"
+              >
+                <div className="group relative rounded-[16px] border border-[#22461B]/30 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/50 hover:shadow-md">
+                  <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${name} LinkedIn profile`}
+                    className="absolute right-3 top-3 inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#163C0F]/20 bg-[#F3F7F1] text-[#163C0F] transition-all duration-300 hover:bg-[#163C0F] hover:text-white"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+
+                  {/* Avatar */}
+                  <div className="mb-3 mt-1">
+                    <div className="w-[90px] h-[90px] rounded-full overflow-hidden border-2 border-[#22461B]/15">
+                      <img
+                        src={image}
+                        alt={name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-1">
+                    {/* Name */}
+                    <h3 className="hero-text-team-name mb-1 text-[#163C0F]">
+                      {name}
+                    </h3>
+
+                    {/* Role */}
+                    <p className="hero-text-team-role text-[#336429]">
+                      {role}
+                    </p>
+                  </div>
+
                 </div>
-                <span
-                  className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-[7px] py-1 rounded-full text-white"
-                  style={{ background: "#2A5A21" }}
-                >
-                  {experience}
-                </span>
-              </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-              <div className="mt-[10px]">
-                {/* Name */}
-                <h3 className="hero-text-team-name mb-[2px]">
-                  {name}
-                </h3>
-
-                {/* Role */}
-                <p className="hero-text-team-role mb-[2px]">
-                  {role}
-                </p>
-
-                {/* Degree */}
-                <p className="hero-text-team-role mb-[20px]">
-                  {degree}
-                </p>
-              </div>
-
-              {/* Expertise */}
-              <div className="w-full text-left">
-                <p className="hero-text-expertise-label mb-3">
-                  Expertise :
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {expertise.map((item) => (
-                    <span
-                      key={item}
-                      className="hero-text-expertise-tag px-[4px] py-[2px] rounded-full border border-[#5A6F554D]/90"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+          <CarouselPrevious className="left-0 top-[42%] hidden sm:flex border-[#163C0F]/30 text-[#163C0F]" />
+          <CarouselNext className="right-0 top-[42%] hidden sm:flex border-[#163C0F]/30 text-[#163C0F]" />
+        </Carousel>
       </section>
     </div>
   );
