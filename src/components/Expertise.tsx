@@ -48,7 +48,7 @@ const Expertise = () => {
       </section>
 
       {/* Practice Area Listing */}
-      <section className="px-4 pb-8 sm:px-8 md:px-12 lg:px-16">
+      <section className="px-4 pb-8 mt-8 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto space-y-0">
           {practiceAreas.map((area, index) => (
             <article
