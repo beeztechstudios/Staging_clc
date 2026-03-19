@@ -37,16 +37,16 @@ const Hero = () => {
 
   return (
 
-    <div className="flex-1 ">
+    <div className="flex-1 overflow-x-hidden">
       <HeroAnimations />
       {/* Hero Section */}
-      <section className="relative py-4 px-4 sm:px-8  md:px-12 lg:px-16 xl:mx-0 text-center justify-end  space-y-[48px] overflow-hidden">
+      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 xl:mx-0 text-center justify-end space-y-10 sm:space-y-12 overflow-hidden">
 
         <HeroBackground />
-        <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
+        <div className="mx-auto w-full max-w-2xl px-0 sm:px-4">
 
           <h1
-            className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] md:mr-8 lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
+            className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
             style={{
               fontFamily: "League Spartan, sans-serif",
               fontWeight: 700,
@@ -55,7 +55,7 @@ const Hero = () => {
             Commitment to Legal Excellence.
           </h1>
 
-          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8 px-1 sm:px-0">
             Trusted by corporations and individuals across India for strategic legal solutions.
 
           </p>
@@ -63,14 +63,14 @@ const Hero = () => {
           <div className="flex w-full flex-col hero-buttons justify-center items-center gap-3 sm:flex-row sm:gap-[12px]">
             <Link
               href="/contact"
-              className="hero-text-button bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white flex min-h-[40px] w-full max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
+              className="hero-text-button bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white flex min-h-[44px] w-full max-w-full sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
             >
               Partner With Us <ArrowRight className="h-5 w-5" />
             </Link>
 
             <Link
               href="/about"
-              className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[40px] w-full max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
+              className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[44px] w-full max-w-full sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
               Review Firm Profile
 
             </Link>
@@ -79,13 +79,13 @@ const Hero = () => {
 
 
         {/* Stats */}
-        <div className="flex items-center justify-center  gap-16 sm:gap-12 max-w-[600px] mx-auto  ">
+        <div className="grid grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 max-w-[600px] mx-auto w-full">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
             { value: 98, suffix: "%", label: "CLIENT SATISFACTION" },
           ].map(({ value, suffix, label }) => (
-            <div key={label} className="hero-stat">
+            <div key={label} className="hero-stat min-w-0">
 
               <div
                 className="hero-text-counter counter text-[#336429] mb-1"
@@ -105,7 +105,7 @@ const Hero = () => {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-4 px-4 sm:px-8 hero-buttons md:px-12  lg:px-16 xl:mx-10  ">
+      <section className="py-4 px-4 sm:px-8 hero-buttons md:px-12 lg:px-16 xl:mx-10">
 
         <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
           WELCOME TO COMMERCIAL LAW CHAMBER
@@ -208,7 +208,7 @@ const Hero = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-8 sm:py-[24px]  px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
+      <section className="py-8 sm:py-[24px] px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
         <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
           OUR TEAM
@@ -216,7 +216,7 @@ const Hero = () => {
 
         <Carousel
           opts={{ align: "start", loop: true }}
-          className="w-full px-1 sm:px-10"
+          className="w-full px-0 sm:px-10"
         >
           <CarouselContent className="-ml-4">
             {[

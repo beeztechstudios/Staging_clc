@@ -336,9 +336,9 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       </p>
 
       {/* Short description */}
-      <p className="hero-text-body text-[#374151] mb-5 text-left">
+      {/* <p className="hero-text-body text-[#374151] mb-5 text-left">
         {member.shortDescription}
-      </p>
+      </p> */}
 
       {/* Expertise pills */}
       {/* <div className="w-full text-left mb-5">
