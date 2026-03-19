@@ -79,24 +79,24 @@ const notableRepresentation = [
 
 const About = () => {
   return (
-    <div className="flex-1 bg-white xl:mx-10">
+    <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center space-y-[48px] overflow-hidden">
+      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden">
         <HeroBackground />
-        <div className="mx-auto max-w-2xl px-2">
+        <div className="mx-auto max-w-2xl px-0 sm:px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Premier Tax and Commercial Law Firm
           </p>
-          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8 px-1 sm:px-0">
             Strategic Legal Excellence in Tax and Commercial Disputes
           </p>
 
           {/* Stats */}
-          <div className="flex items-center justify-center gap-4 sm:gap-[24px] max-w-[600px] mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-[24px] max-w-[600px] mx-auto w-full">
             {stats.map(({ label, value, numericValue, suffix }) => (
-              <div key={label} className="hero-stat">
+              <div key={label} className="hero-stat min-w-0">
                 <div
                   className="counter hero-text-counter text-[#336429] mb-1"
                   data-value={numericValue}
@@ -147,7 +147,7 @@ const About = () => {
             return (
               <div
                 key={title}
-                className="p-[11px] flex items-start gap-3 min-h-[110px]"
+                className="p-[11px] sm:p-[14px] flex items-start gap-3 min-h-[96px] sm:min-h-[110px]"
                 style={{ background: isGreen ? "#EBF3E8" : "#FFFFFF" }}
               >
                 {/* <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
@@ -185,13 +185,13 @@ const About = () => {
                   : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }
             >
-              <div className="flex items-center gap-3 px-[8px] py-[17px]">
+              <div className="flex items-start sm:items-center gap-3 px-[8px] py-[14px] sm:py-[17px]">
                 {/* <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
                   <Icon className="h-6 w-6 text-[#163C0F]/80" />
                   </div> */}
                 <span className="hero-text-practice-title">{title}</span>
               </div>
-              <div className="flex items-center px-[8px] py-[17px]">
+              <div className="flex items-start sm:items-center px-[8px] py-[14px] sm:py-[17px]">
                 <p className="hero-text-practice-desc">{description}</p>
               </div>
             </div>
@@ -222,9 +222,11 @@ const About = () => {
           Representative Litigation &amp; Advisory Experience
         </p>
 
-        <ul className="list-disc pl-6 hero-text-body text-gray-800 space-y-4">
+        <ul className="list-disc pl-5 sm:pl-6 hero-text-body text-gray-800 space-y-4">
           {notableRepresentation.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} className="leading-relaxed">
+              {item}
+            </li>
           ))}
         </ul>
 

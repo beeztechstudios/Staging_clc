@@ -30,10 +30,10 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full max-w-[834px] ">
+    <header className="w-full max-w-[834px] overflow-x-hidden">
       {/* Logo row */}
       <div className="bg-[#E5ECE3]/80">
-        <div className="w-full h-[107px]  px-4 sm:px-6 md:px-6 py-3 flex  justify-between items-center">
+        <div className="w-full h-[96px] sm:h-[107px] px-4 sm:px-6 md:px-6 py-3 flex justify-between items-center gap-3">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -43,7 +43,7 @@ const Header = () => {
               alt="Commercial Law Chamber - Leading Tax & Commercial Disputes Law Firm"
               loading="eager"
               fetchPriority="high"
-              className="h-10 sm:h-12 md:h-14 w-auto"
+              className="h-8 sm:h-12 md:h-14 w-auto max-w-[220px] sm:max-w-[280px]"
             />
           </Link>
 
@@ -124,7 +124,7 @@ const Header = () => {
 
       {/* Mobile dropdown menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#163C0F] z-50 relative">
+        <div className="lg:hidden bg-[#163C0F] z-50 relative max-h-[70vh] overflow-y-auto">
           {/* Locations on mobile */}
           <div className="flex gap-2 px-4 py-2 border-b border-white/10">
             {locations.map((loc) => (

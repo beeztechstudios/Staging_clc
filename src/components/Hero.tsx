@@ -79,7 +79,7 @@ const Hero = () => {
 
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 max-w-[600px] mx-auto w-full">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 max-w-[600px] mx-auto w-full">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
@@ -192,13 +192,13 @@ const Hero = () => {
               }
             >
               <div className="flex items-center px-[8px] py-[17px]">
-                <Link href={href} className="hero-text-practice-title hover:underline">
+                <Link href={href} className="hero-text-practice-title hover:underline break-words">
                   {title}
                 </Link>
               </div>
 
               <div className="flex items-center px-[8px] py-[17px]">
-                <p className="hero-text-practice-desc">
+                <p className="hero-text-practice-desc break-words">
                   {desc}
                 </p>
               </div>

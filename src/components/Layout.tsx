@@ -125,7 +125,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
 
-    <div className="min-h-screen pt-[20px] flex flex-col items-center justify-center">
+    <div className="min-h-screen pt-[20px] flex flex-col items-center overflow-x-hidden">
       {showDisclaimer && (
         <div className="fixed inset-0 z-[100] bg-black/70 px-4 py-6 sm:px-6 flex items-center justify-center">
           <div className="w-full max-w-2xl rounded-2xl border border-[#22461B]/30 bg-white shadow-2xl">
@@ -170,7 +170,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       )}
 
       {/* problem div */}
-      <div className="flex flex-row items-start lg:justify-center  w-full max-w-[1600px]  px-0 sm:px-2 md:px-4">
+      <div className="flex flex-row items-start lg:justify-center w-full max-w-[1600px] px-0 sm:px-2 md:px-4 overflow-x-hidden">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
           <div ref={leftSidebarRef} className="hidden  lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[180px] -mr-25 z-20">
@@ -182,7 +182,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
 
         {/* MAIN PAGE BLOCK (Center) */}
-        <div className="max-w-[834px]">
+        <div className="w-full max-w-[834px] min-w-0">
           <Header />
           <div className="w-full  shadow-2xl relative border bg-white border-gray-200">
 
