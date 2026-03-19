@@ -73,6 +73,20 @@ export const queries = {
     featuredImage, downloadUrl, seo
   }`,
 
+  getAllMatterUpdates: `*[_type == "matterUpdate"] | order(publishedAt desc) {
+    _id, title, slug, subtitle, excerpt, publishedAt, isNew, isFeatured,
+    featuredImage
+  }`,
+
+  getMatterUpdateBySlug: `*[_type == "matterUpdate" && slug.current == $slug][0] {
+    _id, title, slug, subtitle, excerpt, content, publishedAt, isNew, isFeatured,
+    featuredImage, seo
+  }`,
+
+  getFeaturedMatterUpdates: `*[_type == "matterUpdate" && isFeatured == true] | order(publishedAt desc)[0...3] {
+    _id, title, slug, subtitle, publishedAt, featuredImage
+  }`,
+
   getAllCategories: `*[_type == "category"] | order(name asc) {
     _id, name, slug, description, color
   }`,
@@ -87,7 +101,7 @@ export const queries = {
     _id, title, slug, type, publishedAt
   }`,
 
-  searchArticles: `*[_type in ["blogPost", "newsUpdate"] && (title match $query || excerpt match $query)]
+  searchArticles: `*[_type in ["blogPost", "newsUpdate", "matterUpdate"] && (title match $query || excerpt match $query)]
     | order(publishedAt desc)[0...10] {
     _id, _type, title, slug, excerpt, publishedAt, type,
     category->{ name }

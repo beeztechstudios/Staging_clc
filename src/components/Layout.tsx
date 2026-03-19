@@ -27,7 +27,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     "/expertise",
     "/team",
     "/news",
-    "/news-updates"
+    "/news-updates",
+    "/matter-updates"
   ];
 
   const showSidebars = sidebarPages.some(path => pathname.startsWith(path));
@@ -44,6 +45,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     "contact": "contact",
     "news-updates": "content",
     "news": "content",
+    "matter-updates": "content",
   };
 
   const firstSegment = pathname.split("/").filter(Boolean)[0] || "";

@@ -18,13 +18,14 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
     { label: "OUR TEAM", key: "team", href: "/team" },
     { label: "INSIGHTS", key: "insights", href: "/insights" },
     { label: "NEWS AND UPDATES", key: "content", href: "/news", separator: true },
+    // { label: "MATTER UPDATES", key: "content", href: "/matter-updates" },
     { label: "CONTACT", key: "contact", href: "/contact", separator: true },
     // { label: "CAREER OPPORTUNITIES", key: "career", href: "/career" },
   ];
 
   const sections = [
     { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform" },
-    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters" },
+    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/matter-updates" },
     { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions" },
   ];
 
@@ -82,49 +83,57 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
         style={{ background: "linear-gradient(to top, #75966b, #b2c6aa)" }}
       >
         <div className="flex flex-col divide-y divide-white/20">
-          {sections.map((s, i) => (
-            <div key={i} className="px-3 py-[5px]  cursor-pointer hover:bg-white/10 transition-colors">
-              <div className="flex items-center  gap-[5px]">
-                <span
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 800,
-                    fontSize: "17.4px",
-                    fontStyle: "Bold",
-                    color: "#163C0F",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {s.bold}
-                </span>
-                <span
+          {sections.map((s, i) => {
+            const content = (
+              <div className="px-3 py-[5px] cursor-pointer hover:bg-white/10 transition-colors">
+                <div className="flex items-center gap-[5px]">
+                  <span
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 800,
+                      fontSize: "17.4px",
+                      fontStyle: "Bold",
+                      color: "#163C0F",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {s.bold}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "10.7px",
+                      color: "#163C0F",
+                      fontStyle: "Regular",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    {s.tag}
+                  </span>
+                </div>
+                <p
                   style={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: "10.7px",
+                    fontSize: "9.4px",
+                    lineHeight: "15px",
                     color: "#163C0F",
-                    fontStyle: "Regular",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
+
                   }}
                 >
-                  {s.tag}
-                </span>
+                  {s.subtitle}
+                </p>
               </div>
-              <p
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "9.4px",
-                  lineHeight: "15px",
-                  color: "#163C0F",
+            );
 
-                }}
-              >
-                {s.subtitle}
-              </p>
-            </div>
-          ))}
+            return (
+              <div key={i}>
+                {s.href ? <Link href={s.href}>{content}</Link> : content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

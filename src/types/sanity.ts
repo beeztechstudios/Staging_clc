@@ -137,6 +137,39 @@ export interface NewsUpdatePreview {
   downloadUrl?: string
 }
 
+export interface MatterUpdate {
+  _id: string
+  title: string
+  slug: {
+    current: string
+  }
+  subtitle: string
+  excerpt: string
+  content: SanityContent
+  publishedAt: string
+  isNew: boolean
+  isFeatured?: boolean
+  featuredImage?: SanityImage
+  seo?: {
+    metaTitle?: string
+    metaDescription?: string
+  }
+}
+
+export interface MatterUpdatePreview {
+  _id: string
+  title: string
+  slug: {
+    current: string
+  }
+  subtitle: string
+  excerpt: string
+  publishedAt: string
+  isNew: boolean
+  isFeatured?: boolean
+  featuredImage?: SanityImage
+}
+
 export interface SearchResult {
   _id: string
   _type: 'blogPost' | 'newsUpdate'

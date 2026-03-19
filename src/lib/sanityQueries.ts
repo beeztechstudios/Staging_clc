@@ -16,3 +16,21 @@ export async function getNewsPost(slug: string) {
     { slug }
   );
 }
+
+export async function getMatterUpdate(slug: string) {
+  return await client.fetch(
+    `*[_type == "matterUpdate" && slug.current == $slug][0]{
+      title,
+      subtitle,
+      excerpt,
+      content,
+      featuredImage,
+      publishedAt,
+      isNew,
+      isFeatured,
+      seo,
+      slug
+    }`,
+    { slug }
+  );
+}
