@@ -143,12 +143,18 @@ const About = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 border border-gray-100">
           {approaches.map(({ icon: Icon, title, description }, index) => {
-            const isGreen = (Math.floor(index / 2) + (index % 2)) % 2 === 0;
+            const cardBgClass =
+              index === 0
+                ? "bg-[#EBF3E8]"
+                : index === 1
+                  ? "bg-white"
+                  : index === 2
+                    ? "bg-[#EBF3E8] sm:bg-white"
+                    : "bg-white sm:bg-[#EBF3E8]";
             return (
               <div
                 key={title}
-                className="p-[11px] sm:p-[14px] flex items-start gap-3 min-h-[96px] sm:min-h-[110px]"
-                style={{ background: isGreen ? "#EBF3E8" : "#FFFFFF" }}
+                className={`p-[11px] sm:p-[14px] flex items-start gap-3 min-h-[96px] sm:min-h-[110px] ${cardBgClass}`}
               >
                 {/* <div className="bg-[#B3C7AB]/40 p-2 flex-shrink-0">
                   <Icon className="h-6 w-6 text-[#163C0F]/80" />
