@@ -94,7 +94,7 @@ const About = () => {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-[24px] max-w-[600px] mx-auto w-full">
+          <div className="grid grid-cols-3 gap-18 sm:flex sm:items-center sm:justify-center  max-w-[600px] mx-auto w-full">
             {stats.map(({ label, value, numericValue, suffix }) => (
               <div key={label} className="hero-stat min-w-0">
                 <div

@@ -85,7 +85,7 @@ export default async function MatterUpdateDetailPage({ params }: { params: Param
                     </Link>
 
                     <h1 className="hero-text-article-title hero-title mb-3">{matter.title}</h1>
-                    <p className="hero-text-body italic text-[#5A6F55] mb-4">{matter.subtitle}</p>
+                    {/* <p className="hero-text-body italic text-[#5A6F55] mb-4">{matter.subtitle}</p> */}
 
                     <div className="flex items-center gap-2">
                         <Calendar className="h-3 w-3 text-[#5A6F55]" />

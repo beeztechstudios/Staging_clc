@@ -63,8 +63,8 @@ export default function MatterUpdates({ initialMatters }: MatterUpdatesProps) {
                                     </h2>
                                 </Link>
 
-                                <p className="hero-text-practice-desc text-[#5A6F55] mb-2">{matter.subtitle}</p>
-                                <p className="hero-text-body text-[#374151] mb-5">{matter.excerpt}</p>
+                                {/* <p className="hero-text-practice-desc text-[#5A6F55] mb-2">{matter.subtitle}</p>
+                                <p className="hero-text-body text-[#374151] mb-5">{matter.excerpt}</p> */}
 
                                 <Link
                                     href={`/matter-updates/${matter.slug.current}`}
