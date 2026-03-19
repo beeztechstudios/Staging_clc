@@ -331,9 +331,9 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       )}
 
       {/* Location */}
-      <p className="hero-text-team-role mb-5 flex items-center justify-center gap-1">
+      {/* <p className="hero-text-team-role mb-5 flex items-center justify-center gap-1">
         <MapPin className="w-3 h-3" /> {member.location}
-      </p>
+      </p> */}
 
       {/* Short description */}
       {/* <p className="hero-text-body text-[#374151] mb-5 text-left">
