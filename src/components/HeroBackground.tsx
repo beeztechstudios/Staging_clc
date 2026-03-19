@@ -9,12 +9,12 @@ export default function HeroBackground() {
             />
             <img
                 src="/new/heroGlass.svg"
-                className="absolute left-[360px] md:left-[360px] max-w-[800px] top-0 -translate-x-1/2 hidden md:block pointer-events-none"
+                className="absolute left-1/2 top-0 -translate-x-1/2 w-[150%] min-[420px]:w-[125%] md:left-[360px] md:w-auto md:max-w-[800px] opacity-55 md:opacity-100 pointer-events-none"
                 alt=""
             />
             <img
                 src="/new/heroGradient.svg"
-                className="absolute left-1/2 -translate-x-1/2 w-full md:w-[80vw] max-w-[950px] top-0 opacity-60 md:opacity-100 pointer-events-none"
+                className="absolute left-1/2 top-0 -translate-x-1/2 w-[145%] min-[420px]:w-[120%] sm:w-full md:w-[80vw] max-w-[950px] opacity-80 md:opacity-100 pointer-events-none"
                 alt=""
             />
         </>

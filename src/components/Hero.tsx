@@ -34,13 +34,12 @@ const distinctions = [
 ];
 
 const Hero = () => {
-
   return (
 
     <div className="flex-1 overflow-x-hidden">
       <HeroAnimations />
       {/* Hero Section */}
-      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 xl:mx-0 text-center justify-end space-y-10 sm:space-y-12 overflow-hidden">
+      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 xl:mx-0 text-center justify-end space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
 
         <HeroBackground />
         <div className="mx-auto w-full max-w-2xl px-0 sm:px-4">
@@ -60,17 +59,17 @@ const Hero = () => {
 
           </p>
 
-          <div className="flex w-full flex-col hero-buttons justify-center items-center gap-3 sm:flex-row sm:gap-[12px]">
+          <div className="flex w-full min-w-0 flex-col hero-buttons justify-center items-center gap-3 sm:flex-row sm:gap-[12px]">
             <Link
               href="/contact"
-              className="hero-text-button bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white flex min-h-[44px] w-full max-w-full sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
+              className="hero-text-button bg-[#163C0F] sm:hover:scale-105 z-10 cursor-pointer text-white flex min-h-[44px] w-full max-w-[100%] sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
             >
               Partner With Us <ArrowRight className="h-5 w-5" />
             </Link>
 
             <Link
               href="/about"
-              className="hero-text-button bg-white hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[44px] w-full max-w-full sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
+              className="hero-text-button bg-white sm:hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[44px] w-full max-w-[100%] sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
               Review Firm Profile
 
             </Link>
@@ -79,7 +78,7 @@ const Hero = () => {
 
 
         {/* Stats */}
-        <div className="grid grid-cols-1 min-[420px]:grid-cols-3 gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 max-w-[600px] mx-auto w-full">
+        <div className="grid w-full max-w-[600px] grid-cols-3 gap-2 min-[420px]:gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 mx-auto">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
@@ -128,15 +127,13 @@ const Hero = () => {
         {/* Checkerboard Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 border-none">
           {distinctions.map(({ text }, index) => {
-            // Checkerboard logic for 2-column grid
-            const isGreen = (Math.floor(index / 2) + (index % 2)) % 2 === 0;
+            const isMobileGreen = index % 2 === 0;
+            const isDesktopGreen = (Math.floor(index / 2) + (index % 2)) % 2 === 0;
             return (
               <div
                 key={text}
-                className="p-[11px] flex items-center min-h-[110px]"
-                style={{
-                  background: isGreen ? "#EBF3E8" : "#FFFFFF",
-                }}
+                className={`p-[11px] flex items-center min-h-[110px] ${isMobileGreen ? "bg-[#EBF3E8]" : "bg-white"
+                  } ${isDesktopGreen ? "sm:bg-[#EBF3E8]" : "sm:bg-white"}`}
               >
                 <p className="hero-text-distinction">
                   {text}
