@@ -34,15 +34,42 @@ const distinctions = [
 ];
 
 const Hero = () => {
+  const teamMembers = [
+    {
+      name: "Vivek Sarin",
+      role: "Founding Partner",
+      image: "/images/vivek.jpg",
+      linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
+    },
+    {
+      name: "Amit Thukral",
+      role: "Partner & Chief Growth Officer",
+      image: "/Amit.png",
+      linkedin: "https://www.linkedin.com/in/amitthukral/",
+    },
+    {
+      name: "Shreyas Srivastava",
+      role: "Partner",
+      image: "/images/shreya.jpg",
+      linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
+    },
+    {
+      name: "Divyanshi Singh",
+      role: "Associate Partner",
+      image: "/images/divyanshi.jpeg",
+      linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
+    },
+  ];
+
   return (
 
     <div className="flex-1 overflow-x-hidden">
       <HeroAnimations />
       {/* Hero Section */}
-      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 xl:mx-0 text-center justify-end space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
+      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 xl:mx-0 text-center justify-end space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
 
         <HeroBackground />
-        <div className="mx-auto w-full max-w-2xl px-0 sm:px-4">
+        <div className="relative z-10 mx-auto w-full max-w-2xl px-0 sm:px-4">
 
           <h1
             className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
@@ -78,13 +105,13 @@ const Hero = () => {
 
 
         {/* Stats */}
-        <div className="grid w-full max-w-[600px] grid-cols-3 gap-2 min-[420px]:gap-3 sm:flex sm:items-center sm:justify-center sm:gap-12 mx-auto">
+        <div className="relative z-10 grid w-full max-w-[600px] grid-cols-3 gap-1 px-1 pb-1 min-[420px]:gap-3 min-[420px]:px-2 sm:flex sm:items-center sm:justify-center sm:gap-12 sm:px-0 sm:pb-0 mx-auto">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
             { value: 98, suffix: "%", label: "CLIENT SATISFACTION" },
           ].map(({ value, suffix, label }) => (
-            <div key={label} className="hero-stat min-w-0">
+            <div key={label} className="hero-stat min-w-0 w-full px-1">
 
               <div
                 className="hero-text-counter counter text-[#336429] mb-1"
@@ -211,40 +238,59 @@ const Hero = () => {
           OUR TEAM
         </h2>
 
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:hidden">
+          {teamMembers.map(({ name, role, image, linkedin }) => (
+            <div key={name} className="h-full">
+              <div className="group relative rounded-[16px] border border-[#22461B]/10 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/20 hover:shadow-md">
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} LinkedIn profile`}
+                  className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
+                >
+                  <Image
+                    src="/new/LinkedIn_icon.svg"
+                    alt="LinkedIn"
+                    width={44}
+                    height={44}
+                    className="w-5 h-5"
+                  />
+                </a>
+
+                <div className="mb-3 mt-1">
+                  <div className="w-[90px] h-[90px] rounded-full overflow-hidden border-2 border-[#22461B]/15">
+                    <img
+                      src={image}
+                      alt={name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-1">
+                  <h3 className="hero-text-team-name mb-1 text-[#163C0F]">
+                    {name}
+                  </h3>
+
+                  <p className="hero-text-team-role text-[#336429]">
+                    {role}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <Carousel
           opts={{ align: "start", loop: true }}
-          className="w-full px-0 sm:px-10"
+          className="hidden w-full px-10 lg:block"
         >
           <CarouselContent className="-ml-4">
-            {[
-              {
-                name: "Vivek Sarin",
-                role: "Founding Partner",
-                image: "/images/vivek.jpg",
-                linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
-              },
-              {
-                name: "Amit Thukral",
-                role: "Partner & Chief Growth Officer",
-                image: "/Amit.png",
-                linkedin: "https://www.linkedin.com/in/amitthukral/",
-              },
-              {
-                name: "Shreyas Srivastava",
-                role: "Partner",
-                image: "/images/shreya.jpg",
-                linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
-              },
-              {
-                name: "Divyanshi Singh",
-                role: "Associate Partner",
-                image: "/images/divyanshi.jpeg",
-                linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
-              },
-            ].map(({ name, role, image, linkedin }) => (
+            {teamMembers.map(({ name, role, image, linkedin }) => (
               <CarouselItem
                 key={name}
-                className="pl-4 basis-full sm:basis-1/2"
+                className="pl-4 basis-1/2"
               >
                 <div className="group relative rounded-[16px] border border-[#22461B]/10 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/20 hover:shadow-md">
                   <a
@@ -291,8 +337,8 @@ const Hero = () => {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="left-0 top-[42%] hidden sm:flex border-[#163C0F]/30 text-[#163C0F]" />
-          <CarouselNext className="right-0 top-[42%] hidden sm:flex border-[#163C0F]/30 text-[#163C0F]" />
+          <CarouselPrevious className="left-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
+          <CarouselNext className="right-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
         </Carousel>
       </section>
     </div>

@@ -83,9 +83,9 @@ const About = () => {
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative px-4 pb-8 pt-6 sm:px-8 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden">
+      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
         <HeroBackground />
-        <div className="mx-auto max-w-2xl px-0 sm:px-2">
+        <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Premier Tax and Commercial Law Firm
           </p>
@@ -94,9 +94,9 @@ const About = () => {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-18 sm:flex sm:items-center sm:justify-center  max-w-[600px] mx-auto w-full">
+          <div className="relative z-10 grid w-full max-w-[600px] grid-cols-3 gap-1 px-1 pb-1 min-[420px]:gap-3 min-[420px]:px-2 sm:flex sm:items-center sm:justify-center sm:gap-12 sm:px-0 sm:pb-0 mx-auto">
             {stats.map(({ label, value, numericValue, suffix }) => (
-              <div key={label} className="hero-stat min-w-0">
+              <div key={label} className="hero-stat min-w-0 w-full px-1">
                 <div
                   className="counter hero-text-counter text-[#336429] mb-1"
                   data-value={numericValue}

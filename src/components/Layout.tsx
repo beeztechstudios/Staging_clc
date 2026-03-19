@@ -125,7 +125,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
 
-    <div className="min-h-screen pt-[20px] flex flex-col items-center overflow-x-hidden">
+    <div className="min-h-screen pt-0 sm:pt-[20px] flex flex-col items-center overflow-x-hidden">
       {showDisclaimer && (
         <div className="fixed inset-0 z-[100] bg-black/70 px-4 py-6 sm:px-6 flex items-center justify-center">
           <div className="w-full max-w-2xl rounded-2xl border border-[#22461B]/30 bg-white shadow-2xl">

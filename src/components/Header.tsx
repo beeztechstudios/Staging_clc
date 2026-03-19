@@ -33,7 +33,7 @@ const Header = () => {
     <header className="w-full max-w-[834px] overflow-x-hidden">
       {/* Logo row */}
       <div className="bg-[#E5ECE3]/80">
-        <div className="w-full h-[96px] sm:h-[107px] px-4 sm:px-6 md:px-6 py-3 flex justify-between items-center gap-3">
+        <div className="w-full h-[80px] sm:h-[107px] px-4 sm:px-6 md:px-6 py-2 sm:py-3 flex justify-between items-center gap-3">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -43,7 +43,7 @@ const Header = () => {
               alt="Commercial Law Chamber - Leading Tax & Commercial Disputes Law Firm"
               loading="eager"
               fetchPriority="high"
-              className="h-8 sm:h-12 md:h-14 w-auto max-w-[220px] sm:max-w-[280px]"
+              className="h-7 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-[280px]"
             />
           </Link>
 
@@ -65,7 +65,7 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>

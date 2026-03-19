@@ -6,12 +6,12 @@ import TeamMember, { teamMembers } from "./TeamMember";
 
 const Team = () => {
   return (
-    <div className="flex-1 bg-white  xl:mx-10">
+    <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
       {/* Team Hero Section */}
-      <section className="relative px-4 pt-4 pb-10 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
+      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
         <HeroBackground />
-        <div className=" max-w-6xl mx-auto">
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center">
             <h1
               className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"

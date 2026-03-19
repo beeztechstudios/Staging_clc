@@ -47,13 +47,13 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
   };
 
   return (
-    <div className="flex-1 bg-white xl:mx-10">
+    <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
         <HeroBackground />
-        <div className="mx-auto max-w-2xl px-2">
+        <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Latest Tax Law News &amp; Legal Judgments
           </p>
