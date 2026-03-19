@@ -24,9 +24,9 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
   ];
 
   const sections = [
-    { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform" },
-    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/matter-updates" },
-    { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions" },
+    { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform", key: "content" },
+    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/matter-updates", key: "matter-updates" },
+    { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions", key: "hotline" },
   ];
 
   const isMenuItemActive = (href: string, key: string) => {
@@ -84,8 +84,9 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
       >
         <div className="flex flex-col divide-y divide-white/20">
           {sections.map((s, i) => {
+            const isActive = activeSection === s.key;
             const content = (
-              <div className="px-3 py-[5px] cursor-pointer hover:bg-white/10 transition-colors">
+              <div className={`px-3 py-[5px] cursor-pointer transition-colors ${isActive ? 'bg-white/30' : 'hover:bg-white/10'}`}>
                 <div className="flex items-center gap-[5px]">
                   <span
                     style={{

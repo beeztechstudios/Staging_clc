@@ -1,6 +1,7 @@
 import { Briefcase, Users, GraduationCap, Clock, MapPin, Building2, CheckCircle } from "lucide-react";
 import { useCareerOpenings } from "@/hooks/useSanityData";
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 
 const whyJoinUs = [
   {
@@ -41,6 +42,7 @@ const Career = () => {
 
       {/* Header */}
       <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+        <HeroBackground />
         <div className="mx-auto max-w-2xl px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Legal Careers in Tax &amp; Commercial Law

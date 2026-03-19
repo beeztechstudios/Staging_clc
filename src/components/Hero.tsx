@@ -1,8 +1,9 @@
 
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 const distinctions = [
   {
@@ -41,8 +42,7 @@ const Hero = () => {
       {/* Hero Section */}
       <section className="relative py-4 px-4 sm:px-8  md:px-12 lg:px-16 xl:mx-0 text-center justify-end  space-y-[48px] overflow-hidden">
 
-        <img src="/new/heroGlass.svg" className="absolute left-[360px] md:left-[360px] max-w-[800px] top-0 -translate-x-1/2 hidden md:block" alt="" />
-        <img src="/new/heroGradient.svg" className="absolute left-1/2 -translate-x-1/2 w-full md:w-[80vw] max-w-[950px] top-0 -z-10 opacity-60 md:opacity-100" alt="" />
+        <HeroBackground />
         <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
 
           <h1
@@ -79,7 +79,7 @@ const Hero = () => {
 
 
         {/* Stats */}
-        <div className="flex items-center justify-center  gap-4 sm:gap-[24px] max-w-[600px] mx-auto  ">
+        <div className="flex items-center justify-center  gap-16 sm:gap-12 max-w-[600px] mx-auto  ">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
@@ -255,9 +255,15 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${name} LinkedIn profile`}
-                    className="absolute right-3 top-3 inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#163C0F]/20 bg-[#F3F7F1] text-[#163C0F] transition-all duration-300 hover:bg-[#163C0F] hover:text-white"
+                    className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
                   >
-                    <Linkedin className="w-4 h-4" />
+                    <Image
+                      src="/new/LinkedIn_icon.svg"
+                      alt="LinkedIn"
+                      width={44}
+                      height={44}
+                      className="w-5 h-5"
+                    />
                   </a>
 
                   {/* Avatar */}

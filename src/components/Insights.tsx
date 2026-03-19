@@ -8,6 +8,7 @@ import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState, useMemo } from "react";
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 
 const Insights = () => {
   const { data: blogs = [], isLoading: blogsLoading } = useBlogPosts();
@@ -30,6 +31,7 @@ const Insights = () => {
 
       {/* Header */}
       <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+        <HeroBackground />
         <div className="mx-auto max-w-2xl px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Insights on GST Act and Rules
@@ -40,6 +42,10 @@ const Insights = () => {
         </div>
 
         {/* Category Filter */}
+      </section>
+
+      {/* Blog Grid */}
+      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons ">
         <div className="flex flex-wrap hero-buttons justify-center gap-2 pb-4">
           {categoryList.map((category) => (
             <button
@@ -54,10 +60,6 @@ const Insights = () => {
             </button>
           ))}
         </div>
-      </section>
-
-      {/* Blog Grid */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons border-t border-dotted border-[#22461B]/50">
 
         {/* Loading skeleton */}
         {blogsLoading && (

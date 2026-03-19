@@ -1,6 +1,7 @@
 "use client";
 
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, ArrowRight } from "lucide-react";
@@ -18,6 +19,7 @@ export default function MatterUpdates({ initialMatters }: MatterUpdatesProps) {
             <HeroAnimations />
 
             <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+                <HeroBackground />
                 <div className="mx-auto max-w-2xl px-2">
                     <h1 className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
                         Matter Updates

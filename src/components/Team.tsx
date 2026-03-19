@@ -1,6 +1,7 @@
 "use client";
 
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 import TeamMember, { teamMembers } from "./TeamMember";
 import Link from "next/link"
 
@@ -9,7 +10,8 @@ const Team = () => {
     <div className="flex-1 bg-white  xl:mx-10">
       <HeroAnimations />
       {/* Team Header Section */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16">
+      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
+        <HeroBackground />
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h1

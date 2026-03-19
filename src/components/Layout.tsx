@@ -45,7 +45,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     "contact": "contact",
     "news-updates": "content",
     "news": "content",
-    "matter-updates": "content",
+    "matter-updates": "matter-updates",
   };
 
   const firstSegment = pathname.split("/").filter(Boolean)[0] || "";
@@ -150,13 +150,13 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             <div className="border-t border-[#22461B]/20 px-5 py-4 sm:px-6 flex flex-col sm:flex-row gap-3 sm:justify-end">
-              <button
+              {/* <button
                 type="button"
                 onClick={handleDisagreeDisclaimer}
                 className="hero-text-button border border-[#163C0F]/30 text-[#163C0F] bg-white px-4 py-2 rounded-md hover:bg-[#F3F7F1] transition-colors"
               >
                 Disagree
-              </button>
+              </button> */}
               <button
                 type="button"
                 onClick={handleAgreeDisclaimer}

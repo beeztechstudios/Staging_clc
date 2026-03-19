@@ -1,6 +1,12 @@
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Expertise = () => {
   const practiceAreas = [
@@ -49,36 +55,40 @@ const Expertise = () => {
 
       {/* Practice Area Listing */}
       <section className="px-4 pb-8 sm:px-8 md:px-12 lg:px-16">
-        <div className="max-w-6xl mx-auto space-y-0">
-          {practiceAreas.map((area, index) => (
-            <article
-              key={area.title}
-              className="grid grid-cols-1 sm:grid-cols-[1fr_2fr_auto] transition-all duration-300 hover:brightness-[0.98]"
-              style={{
-                background:
-                  index % 2 === 0
-                    ? "linear-gradient(to right, #CFE2C8, #FFFFFF)"
-                    : "linear-gradient(to left, #CFE2C8, #FFFFFF)",
-              }}
-            >
-              <div className="flex items-center px-[12px] py-[18px]">
-                <h2 className="hero-text-practice-title text-[#163C0F]">{area.title}</h2>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {practiceAreas.map((area, index) => (
+              <AccordionItem
+                key={area.title}
+                value={`item-${index}`}
+                className="border-b border-[#163C0F]/15"
+                style={{
+                  background:
+                    index % 2 === 0
+                      ? "linear-gradient(to right, #CFE2C8, #FFFFFF)"
+                      : "linear-gradient(to left, #CFE2C8, #FFFFFF)",
+                }}
+              >
+                <AccordionTrigger className="px-[12px] py-[18px] hover:no-underline">
+                  <h2 className="hero-text-practice-title text-[#163C0F] text-left">
+                    {area.title}
+                  </h2>
+                </AccordionTrigger>
 
-              <div className="flex items-center px-[12px] py-[18px]">
-                <p className="hero-text-practice-desc text-[#374151]">{area.subtitle}</p>
-              </div>
-
-              <div className="flex items-center px-[12px] pb-[18px] sm:pb-0">
-                <Link
-                  href={area.href}
-                  className="hero-text-button inline-flex items-center justify-center border border-[#163C0F]/30 text-[#163C0F] hover:bg-[#163C0F] hover:text-white transition-colors px-4 py-2 w-full sm:w-auto"
-                >
-                  Explore
-                </Link>
-              </div>
-            </article>
-          ))}
+                <AccordionContent className="px-[12px] pb-[18px]">
+                  <p className="hero-text-practice-desc text-[#374151] mb-4">
+                    {area.subtitle}
+                  </p>
+                  <Link
+                    href={area.href}
+                    className="hero-text-button inline-flex items-center justify-center border border-[#163C0F]/30 text-[#163C0F] hover:bg-[#163C0F] hover:text-white transition-colors px-4 py-2 w-full sm:w-auto"
+                  >
+                    Explore
+                  </Link>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </div>

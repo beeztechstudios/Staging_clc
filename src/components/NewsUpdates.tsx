@@ -8,6 +8,7 @@ import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState } from "react";
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 
 interface NewsItem {
   _id: string;
@@ -51,6 +52,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
 
       {/* Header */}
       <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+        <HeroBackground />
         <div className="mx-auto max-w-2xl px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Latest Tax Law News &amp; Legal Judgments
@@ -61,24 +63,24 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
         </div>
 
         {/* Filter Buttons */}
+      </section>
+
+      {/* News Cards */}
+      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-para">
         <div className="flex flex-wrap hero-buttons justify-center gap-2 pb-4">
           {typeList.map((type) => (
             <button
               key={type}
               onClick={() => setSelectedType(type)}
               className={`px-4 py-2 transition-all hero-text-meta ${type === selectedType
-                  ? "bg-[#163C0F] !text-white"
-                  : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
+                ? "bg-[#163C0F] !text-white"
+                : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
                 }`}
             >
               {getTypeDisplayName(type)}
             </button>
           ))}
         </div>
-      </section>
-
-      {/* News Cards */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-para border-t border-dotted border-[#22461B]/50">
         {filteredNews.length > 0 ? (
           <div className="grid lg:grid-cols-2 gap-6">
             {filteredNews.map((news) => (
@@ -161,7 +163,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
         ) : (
           <div
             className="px-[8px] py-[17px]"
-            style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
+
           >
             <p className="hero-text-practice-desc">No news updates found in this category.</p>
           </div>

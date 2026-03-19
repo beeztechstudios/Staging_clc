@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Layout from "@/components/Layout";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Commercial & Regulatory Disputes Practice | Commercial Law Chamber",
@@ -56,6 +57,12 @@ export default function CommercialRegulatoryDisputesPage() {
             <div className="flex-1 bg-white xl:mx-10">
                 <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16">
                     <div className="max-w-6xl mx-auto md:mt-[104px]">
+                        <Link
+                            href="/practice-area"
+                            className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-4"
+                        >
+                            &larr; Back to Practice Areas
+                        </Link>
                         <h1 className="hero-text-title text-[#111827] mb-2">Commercial & Regulatory Disputes Practice</h1>
                         <p className="hero-text-body italic text-[#111827] mb-6">
                             Resolving Complex Commercial Conflicts and Regulatory Challenges With Precision, Intelligence & Sector-Driven Strategy

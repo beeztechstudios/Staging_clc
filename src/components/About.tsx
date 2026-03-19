@@ -1,4 +1,5 @@
 import HeroAnimations from "@/lib/heroAnimation";
+import HeroBackground from "@/components/HeroBackground";
 import { Building2, Users, BookOpen, Scale, Globe, Handshake, Shield, Eye, Lightbulb } from "lucide-react";
 
 const stats = [
@@ -83,6 +84,7 @@ const About = () => {
 
       {/* Header */}
       <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center space-y-[48px] overflow-hidden">
+        <HeroBackground />
         <div className="mx-auto max-w-2xl px-2">
           <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
             Premier Tax and Commercial Law Firm
@@ -195,14 +197,23 @@ const About = () => {
             </div>
           ))}
         </div>
-        {/* Our Vision */}
-        <div className=" mt-[24px] rounded-[16px] p-[11px] mb-[24px]">
-          <h3 className="hero-text-practice-title mb-[6px]">Our Vision</h3>
-          <p className="hero-text-practice-desc">
+        <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
+      </section>
+
+      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons  " >
+
+        <h2 className="hero-text-section-heading text-[#336429] mb-[16px]">
+          Our Vision
+        </h2>
+        <div className="hero-text-body text-gray-800 space-y-4">
+          <p>
             To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients' commercial interests in the most complex and impactful matters.
           </p>
+          <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
         </div>
+
       </section>
+
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
         <h2 className="hero-text-section-heading text-[#336429] mb-[8px]">
           Notable Representation and Courtroom Achievements
