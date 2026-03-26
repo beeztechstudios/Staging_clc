@@ -32,7 +32,7 @@ const teamMembers = {
     id: "vivek",
     name: "Vivek Sarin - Founding Partner",
 
-    image: "/vivek.webp",
+    image: "/vivek.png",
     linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
     email: "vivek.sarin@clclaw.in",
     profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Vivek%20Sarin%20Profile.pdf?csf=1&web=1&e=CSlfBw",
@@ -59,7 +59,7 @@ const teamMembers = {
   amit: {
     id: "amit",
     name: "Amit Thukral - Partner and Chief Growth Officer",
-    image: "/Amit.png",
+    image: "/amit.png",
     linkedin: "https://www.linkedin.com/in/amitthukral/",
     email: "amit.t@clclaw.in",
     profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Amit%20Thukral%20Profile.pdf?csf=1&web=1&e=RIsVqz",
@@ -99,7 +99,7 @@ const teamMembers = {
     id: "shreyas",
     name: "Shreyas Srivastava - Partner",
 
-    image: "/shreya.webp",
+    image: "/Shreyash.png",
     linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
     email: "shreyas.s@clclaw.in",
     profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Shreyas%20Shrivastava%20Profile.pdf?csf=1&web=1&e=qrZhW6",
@@ -127,7 +127,7 @@ const teamMembers = {
     id: "divyanshi",
     name: "Divyanshi Singh - Associate Partner",
 
-    image: "/images/divyanshi.jpeg",
+    image: "/divyanshi.png",
     linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
     email: "divyanshi.s@clclaw.in",
     profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Divyanshi%20Singh%20Profile.pdf?csf=1&web=1&e=J21ASG",

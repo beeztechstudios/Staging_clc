@@ -13,12 +13,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import TeamMember, { teamMembers } from "@/components/TeamMember";
 const distinctions = [
   {
-    src: "/vivek.webp",
+    src: "/vivek.png",
     alt: "Boutique Law Practice",
     text: "Boutique law practice specializing in GST law services, Customs, and commercial dispute resolution",
   },
   {
-    src: "/shreya.webp",
+    src: "/shreyash.png",
     alt: "Supreme Court",
     text: "Led by top tax lawyers in India with deep advisory and litigation expertise",
   },
@@ -28,12 +28,12 @@ const distinctions = [
     text: "Business law chambers with a Pan-India legal network and seamless multi-jurisdictional coverage",
   },
   {
-    src: "/images/vivek.jpg",
+    src: "/images/vivek.png",
     alt: "Top Tax Lawyers",
     text: "Research-intensive, precedent-driven legal strategy",
   },
   {
-    src: "/images/vivek.jpg",
+    src: "/images/vivek.png",
     alt: "Top Tax Lawyers",
     text: "Regular representation before the Supreme Court of India",
   },
