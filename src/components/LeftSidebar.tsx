@@ -25,7 +25,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
 
   const sections = [
     { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform", key: "content", href: "/news" },
-    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/matter-updates", key: "matter-updates" },
+    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/news", key: "matter-updates" },
     { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions", key: "hotline", href: "https://youtube.com/@taxtalksbyclc?si=h-vS6V1ISGauJzXS" },
   ];
 
