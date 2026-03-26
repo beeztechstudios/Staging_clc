@@ -162,14 +162,14 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
   if (variant === "detailed") {
     return (
-      <div className=" p-2 sm:p-6">
+      <div className="p-1 sm:p-4 md:p-6">
         <div className="max-w-4xl">
 
           {/* Header */}
-          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-4 sm:gap-6 mb-5 sm:mb-8">
             {/* Avatar */}
-            <div className="relative shrink-0">
-              <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+            <div className="relative shrink-0 mx-auto md:mx-0">
+              <div className="w-[104px] h-[104px] sm:w-[120px] sm:h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -185,7 +185,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 )}
               </div>
               <span
-                className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-xs sm:text-sm"
                 style={{ background: "#2A5A21" }}
               >
                 {member.experience}
@@ -193,11 +193,11 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
             </div>
 
             {/* Name + meta + actions */}
-            <div className="mt-4 md:mt-0 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-5 items-start">
+            <div className="mt-1 sm:mt-3 md:mt-0 grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-4 sm:gap-5 items-start min-w-0">
               <div className="text-center md:text-left">
                 <h2
                   className="hero-text-team-name font-bolder mt-2 mb-1 text-[#163C0F]"
-                  style={{ fontSize: "clamp(34px, 4vw, 42px)", lineHeight: "1.1" }}
+                  style={{ fontSize: "clamp(26px, 6.2vw, 40px)", lineHeight: "1.12" }}
                 >
                   {memberName}
                 </h2>
@@ -211,7 +211,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 </div>
               </div>
 
-              <div className="w-full lg:w-[280px] border border-[#22461B]/20 rounded-[12px] p-3 bg-[#F7FBF5]">
+              <div className="w-full xl:w-[280px] border border-[#22461B]/20 rounded-[12px] p-3 bg-[#F7FBF5]">
                 {/* <p className="hero-text-expertise-label text-[#336429] mb-2 text-left">Connect</p> */}
                 <div className="flex flex-col gap-2">
                   {member.linkedin ? (
@@ -268,7 +268,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
 
             {/* About */}
             <section>
@@ -431,9 +431,9 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
               View Profile
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+          <DialogContent className="w-[calc(100vw-20px)] sm:w-full max-w-4xl max-h-[88vh] sm:max-h-[90vh] bg-white overflow-y-auto p-3 sm:p-6">
+            <DialogHeader className="pr-9 sm:pr-10 pb-1">
+              <DialogTitle className="text-xl sm:text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
               <DialogDescription className="hero-text-team-role text-[#336429]">
                 Trusted experts bringing clarity and strategy to complex tax matters.
               </DialogDescription>

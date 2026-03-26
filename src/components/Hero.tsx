@@ -5,8 +5,6 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -312,78 +310,9 @@ const Hero = () => {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:hidden">
           {Object.values(teamMembers).map((member) => {
-            const [name, ...roleParts] = member.name.split(" - ");
-            const role = roleParts.join(" - ");
-
             return (
               <div key={member.id} className="h-full">
-                <div className="relative border border-[#22461B]/30 rounded-[16px] p-4 sm:p-5 flex flex-col items-center text-center h-full">
-                  <div className="relative mb-3 sm:mb-4">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-gray-100">
-                      <img
-                        src={member.image}
-                        alt={name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <span
-                      className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-xs sm:text-sm"
-                      style={{ background: "#2A5A21" }}
-                    >
-                      {member.experience}
-                    </span>
-                  </div>
-
-                  <div className="mt-3 sm:mt-4 flex-1 flex flex-col w-full">
-                    <h2
-                      className="hero-text-team-name mb-1 text-[#163C0F] text-lg sm:text-xl"
-                      style={{ lineHeight: "1.2", fontWeight: 700 }}
-                    >
-                      {name}
-                    </h2>
-
-                    <p className="hero-text-team-role mb-4 text-[#336429] text-xs sm:text-sm">
-                      {role}
-                    </p>
-
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${name} LinkedIn profile`}
-                      className="flex pb-3 items-center justify-center transition-opacity duration-300 hover:opacity-90"
-                    >
-                      <Image
-                        src="/new/LinkedIn_icon.svg"
-                        alt="LinkedIn"
-                        width={44}
-                        height={44}
-                        className="w-5 h-5"
-                      />
-                    </a>
-
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button
-                          suppressHydrationWarning
-                          className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-                          style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
-                        >
-                          View Profile
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
-                        <DialogHeader>
-                          <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
-                          <DialogDescription className="hero-text-team-role text-[#336429]">
-                            Trusted experts bringing clarity and strategy to complex tax matters.
-                          </DialogDescription>
-                        </DialogHeader>
-                        <TeamMember member={member} variant="detailed" />
-                      </DialogContent>
-                    </Dialog>
-                  </div>
-                </div>
+                <TeamMember member={member} />
               </div>
             );
           })}
@@ -395,97 +324,12 @@ const Hero = () => {
         >
           <CarouselContent className="-ml-4">
             {Object.values(teamMembers).map((member) => {
-              const [name, ...roleParts] = member.name.split(" - ");
-              const role = roleParts.join(" - ");
-
               return (
                 <CarouselItem
                   key={member.id}
                   className="pl-4 basis-1/2"
                 >
-                  <div className="relative border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
-                    {/* <a
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${name} LinkedIn profile`}
-                    className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
-                  >
-                    <Image
-                      src="/new/LinkedIn_icon.svg"
-                      alt="LinkedIn"
-                      width={44}
-                      height={44}
-                      className="w-5 h-5"
-                    />
-                  </a> */}
-
-                    <div className="relative mb-4">
-                      <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-100">
-                        <img
-                          src={member.image}
-                          alt={name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <span
-                        className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-sm"
-                        style={{ background: "#2A5A21" }}
-                      >
-                        {member.experience}
-                      </span>
-                    </div>
-
-                    <div className="mt-4 flex-1  flex flex-col w-full">
-                      <h2
-                        className="hero-text-team-name mb-1 text-[#163C0F] text-xl"
-                        style={{ lineHeight: "1.2", fontWeight: 700 }}
-                      >
-                        {name}
-                      </h2>
-
-                      <p className="hero-text-team-role mb-3 text-[#336429] text-sm">
-                        {role}
-                      </p>
-
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${name} LinkedIn profile`}
-                        className="flex pb-2 items-center justify-center transition-opacity duration-300 hover:opacity-90"
-                      >
-                        <Image
-                          src="/new/LinkedIn_icon.svg"
-                          alt="LinkedIn"
-                          width={44}
-                          height={44}
-                          className="w-5 h-5"
-                        />
-                      </a>
-
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Button
-                            suppressHydrationWarning
-                            className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-                            style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
-                          >
-                            View Profile
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
-                            <DialogDescription className="hero-text-team-role text-[#336429]">
-                              Trusted experts bringing clarity and strategy to complex tax matters.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <TeamMember member={member} variant="detailed" />
-                        </DialogContent>
-                      </Dialog>
-                    </div>
-                  </div>
+                  <TeamMember member={member} />
 
                 </CarouselItem>
               );

@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full" style={{ position: "relative", zIndex: 100 }}>
+    <header className="w-full" style={{ position: "relative", zIndex: 40 }}>
 
       {/* Logo row */}
       <div className="bg-[#E5ECE3]/80">
@@ -140,7 +140,7 @@ const Header = () => {
             top: "100%",
             left: 0,
             width: "100%",
-            zIndex: 9999,
+            zIndex: 50,
             boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
           }}
         >
