@@ -171,12 +171,13 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
             <div className="relative shrink-0 mx-auto md:mx-0">
               <div className="w-[104px] h-[104px] sm:w-[120px] sm:h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
                 {member.image ? (
-                  <img
+                  <Image
                     src={member.image}
                     alt={`${member.name} at Commercial Law Chamber`}
+                    width={120}
+                    height={120}
                     className="w-full h-full object-cover"
                     loading="lazy"
-                    decoding="async"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -371,12 +372,13 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       <div className="relative mb-4">
         <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
           {member.image ? (
-            <img
+            <Image
               src={member.image}
               alt={`${member.name} at Commercial Law Chamber`}
+              width={120}
+              height={120}
               className="w-full h-full object-cover"
               loading="lazy"
-              decoding="async"
             />
           ) : (
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">

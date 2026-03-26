@@ -18,7 +18,7 @@ const Header = () => {
     { label: "INSIGHTS", href: "/insights" },
     { label: "NEWS AND UPDATES", href: "/news" },
     { label: "CONTACT", href: "/contact" },
-    { label: "CAREER OPPORTUNITIES", href: "/career" },
+    // { label: "CAREER OPPORTUNITIES", href: "/career" },
   ];
 
   const isMenuItemActive = (href: string) => {
