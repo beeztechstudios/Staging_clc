@@ -220,9 +220,9 @@ const About = () => {
 
       </section>
 
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
+      <section id="notable-achievements" className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
         <h2 className="hero-text-section-heading text-[#336429] mb-[8px]">
-          Notable Representation and Courtroom Achievements
+          Our Commitment to Success
         </h2>
         <p className="hero-text-practice-title text-[#C52828] mb-[14px]">
           Representative Litigation &amp; Advisory Experience

@@ -32,14 +32,20 @@ const portableTextComponents: PortableTextComponents = {
       <p className="mb-4 leading-relaxed text-gray-700">{children}</p>
     ),
 
+    h2: ({ children }) => (
+      <h2 className="text-2xl font-semibold text-[#336429] mb-4 mt-8">
+        {children}
+      </h2>
+    ),
+
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold text-gray-800 mb-4 mt-6">
+      <h3 className="text-xl font-semibold text-[#336429] mb-4 mt-6">
         {children}
       </h3>
     ),
 
     h4: ({ children }) => (
-      <h4 className="text-lg font-semibold text-gray-800 mb-3 mt-5">
+      <h4 className="text-lg font-semibold text-[#336429] mb-3 mt-5">
         {children}
       </h4>
     ),

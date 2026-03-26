@@ -11,7 +11,7 @@ export default function RightSidebar() {
 
   if (isLoading) {
     return (
-      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col sticky top-0 self-start p-6">
+      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col self-start p-6">
         <div className="animate-pulse space-y-4">
           <div className="h-10 bg-gray-100 rounded"></div>
           <div className="h-32 bg-gray-100 rounded"></div>
@@ -23,21 +23,21 @@ export default function RightSidebar() {
 
   if (error) {
     return (
-      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col sticky top-0 self-start p-6">
+      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col self-start p-6">
         <p className="text-sm text-red-500">Failed to load sidebar data.</p>
       </aside>
     );
   }
 
   return (
-    <aside className="right-sidebar max-w-[252px] w-full lg:w-64 xl:w-72 flex flex-col sticky top-0 self-start">
+    <aside className="right-sidebar max-w-[252px] w-full lg:w-64 xl:w-72 flex flex-col self-start">
       {/* ── SEARCH AREA ── */}
       <div className="p-3 mb-[2px] bg-[#E5ECE3]">
         <SearchClient />
       </div>
 
       {/* ── MISSION AND VISION ── */}
-      <div className="py-[16px] px-[11px] h-[78px] bg-[#a4be99] border-l-4 border-[#22461B]">
+      {/* <div className="py-[16px] px-[11px] h-[78px] bg-[#a4be99] border-l-4 border-[#22461B]">
         <h3
           style={{
             fontFamily: "Inter, sans-serif",
@@ -66,7 +66,7 @@ export default function RightSidebar() {
         >
           Distinctly Different
         </p>
-      </div>
+      </div> */}
 
       {/* ── WHAT'S NEW (BLOGS) ── */}
       <div className="py-[23.5px] px-[11px] mt-1 border-l-4 border-[#22461B]" style={{ background: "linear-gradient(to top, #e6e7e5, #f1f2f1)" }}>

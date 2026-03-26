@@ -1,10 +1,16 @@
 
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import TeamMember, { teamMembers } from "@/components/TeamMember";
 const distinctions = [
   {
     src: "/vivek.webp",
@@ -34,32 +40,7 @@ const distinctions = [
 ];
 
 const Hero = () => {
-  const teamMembers = [
-    {
-      name: "Vivek Sarin",
-      role: "Founding Partner",
-      image: "/images/vivek.jpg",
-      linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
-    },
-    {
-      name: "Amit Thukral",
-      role: "Partner & Chief Growth Officer",
-      image: "/Amit.png",
-      linkedin: "https://www.linkedin.com/in/amitthukral/",
-    },
-    {
-      name: "Shreyas Srivastava",
-      role: "Partner",
-      image: "/images/shreya.jpg",
-      linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
-    },
-    {
-      name: "Divyanshi Singh",
-      role: "Associate Partner",
-      image: "/images/divyanshi.jpeg",
-      linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
-    },
-  ];
+  const [openPracticeTitle, setOpenPracticeTitle] = useState<string | null>(null);
 
   return (
 
@@ -81,17 +62,17 @@ const Hero = () => {
             Commitment to Legal Excellence.
           </h1>
 
-          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8 px-1 sm:px-0">
+          <p className="hero-text-subpara  text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8 px-1 sm:px-0">
             Trusted by corporations and individuals across India for strategic legal solutions.
 
           </p>
 
           <div className="flex w-full min-w-0 flex-col hero-buttons justify-center items-center gap-3 sm:flex-row sm:gap-[12px]">
             <Link
-              href="/contact"
+              href="/about#notable-achievements"
               className="hero-text-button bg-[#163C0F] sm:hover:scale-105 z-10 cursor-pointer text-white flex min-h-[44px] w-full max-w-[100%] sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center sm:h-[40px] sm:w-[166px]"
             >
-              Partner With Us <ArrowRight className="h-5 w-5" />
+              Our Commitment
             </Link>
 
             <Link
@@ -141,8 +122,15 @@ const Hero = () => {
           <p>
             Established in 2008, the Commercial Law Chamber (CLC) is a boutique law firm widely recognized for its specialized tax advisory and high-stakes dispute resolution practice. As one of the top taxation law firms in India, we maintain a strong focus on the Goods and Services Tax Act and Customs laws. Led by the team of best GST lawyers in Delhi and supported by a team of 15 associates, CLC delivers strategic, research-driven, and commercially aligned legal solutions across complex Tax and Commercial Disputes.
           </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+          >
+            Read More &rarr;
+          </Link>
           <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
         </div>
+
       </section>
 
       {/* Our Distinction */}
@@ -169,66 +157,150 @@ const Hero = () => {
             );
           })}
         </div>
+        <Link
+          href="/about"
+          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+        >
+          Read More &rarr;
+        </Link>
 
       </section>
 
       {/* Core Practice Areas */}
       <section className="py-8 sm:py-[24px] px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
-        <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
-        <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
-          CORE PRACTICE AREAS
-        </h2>
-        <p className="hero-text-body text-[#374151] mb-6">
-          Comprehensive legal solutions across key practice domains
-        </p>
-        <div className="space-y-0">
-          {[
+        {(() => {
+          const practiceAreas = [
             {
               title: "Direct Tax",
               href: "/practice-area/direct-tax-practice",
-              desc: "End-To-End Advisory By Experienced Taxation Lawyers, Covering Compliance And Dispute Resolution Across Corporate And Individual Tax Matters, Including Complex Assessments And High-Value Tax Litigation.",
+              points: [
+                "Corporate & Individual Tax Advisory",
+                "Cross-Border Tax Structuring & International Tax",
+                "Transfer Pricing",
+                "Transaction Structuring & Reorganisations",
+                "Tax Disputes & Litigation",
+              ],
             },
             {
-              title: "Indirect Tax",
+              title: "Indirect Tax Practice (GST & Customs)",
               href: "/practice-area/indirect-tax-gst-customs",
-              desc: "Comprehensive GST Lawyer Advisory, Compliance Management, And Representation In Complex Litigation, Including Classification Disputes, GST Input Tax Credit Rules, Investigation, And Enforcement Actions.",
+              points: [
+                "GST Advisory, Compliance & Audit Management",
+                "Supply Chain Planning & Optimisation",
+                "Classification, Valuation & ITC Matters",
+                "Customs Advisory",
+                "Investigations & Enforcement",
+                "Litigation & Appellate Representation",
+              ],
             },
             {
-              title: "Commercial & Regulatory Disputes",
+              title: "Commercial & Regulatory Disputes Practice",
               href: "/practice-area/commercial-regulatory-disputes",
-              desc: "Strategic Resolution Of High-Stakes Disputes, Combining Legal Precision Sector-Specific Insight, And Outcome-Oriented Strategy.",
+              points: [
+                "Commercial Disputes",
+                "Regulatory Disputes & Enforcement",
+                "Sector-Focused Regulatory Support",
+              ],
             },
             {
-              title: "Customs Law",
+              title: "Customs Law Practice",
               href: "/practice-area/customs-law-practice",
-              desc: "Strategic Counsel In Cross-Border Trade, Customs Litigation, And Enforcement Actions.",
+              points: [
+                "Customs Classification, Valuation & Duty Assessment",
+                "FTA/Origin Benefits & Cross-Border Structuring",
+                "Port Clearance, Warehousing & Bonded Operations",
+                "DGFT, FTP Schemes & Incentive Advisory",
+                "Investigations, Enforcement & Anti-Smuggling Proceedings",
+                "Customs Litigation & Appellate Representation",
+              ],
             },
-          ].map(({ title, desc, href }, index) => (
-            <div
-              key={title}
-              className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] overflow-hidden"
-              style={
-                index % 2 === 0
-                  ? {
-                    background: "linear-gradient(to right, #CFE2C8, #FFFFFF)",
-                  }
-                  : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
-              }
-            >
-              <div className="flex items-center px-[8px] py-[17px]">
-                <Link href={href} className="hero-text-practice-title hover:underline break-words">
-                  {title}
-                </Link>
+          ];
+
+          return (
+            <>
+              <div className="w-full border border-dotted border-[#22461B]/50 mb-[20px]"></div>
+              <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
+                CORE PRACTICE AREAS
+              </h2>
+              <p className="hero-text-body text-[#374151] mb-6">
+                Comprehensive legal solutions across key practice domains
+              </p>
+              <div className="space-y-0">
+                {practiceAreas.map(({ title, points, href }, index) => {
+                  const isOpen = openPracticeTitle === title;
+
+                  return (
+                    <div
+                      key={title}
+                      className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] overflow-hidden"
+                      style={
+                        index % 2 === 0
+                          ? {
+                            background: "linear-gradient(to right, #CFE2C8, #FFFFFF)",
+                          }
+                          : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
+                      }
+                    >
+                      <div className="flex items-center px-[8px] py-[17px]">
+                        <Link href={href} className="hero-text-practice-title hover:underline break-words">
+                          {title}
+                        </Link>
+                      </div>
+
+                      <div className="px-[8px] py-[17px] flex items-center sm:justify-end">
+                        <button
+                          type="button"
+                          onClick={() => setOpenPracticeTitle(isOpen ? null : title)}
+                          className="hero-text-practice-desc inline-flex items-center gap-1 text-[#163C0F] hover:underline"
+                        >
+                          View practice scope
+                          <span
+                            aria-hidden="true"
+                            className={`inline-block transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                          >
+                            &#9662;
+                          </span>
+                        </button>
+                      </div>
+
+                      {isOpen && (
+                        <div className="sm:col-span-2 px-[8px] pb-[17px]">
+                          <div className="bg-white/85 p-4 sm:p-5">
+                            <ul className="space-y-2 hero-text-practice-desc text-[#1F2937] list-disc pl-5">
+                              {points.map((point) => (
+                                <li key={point} className="break-words">
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+
+                            <Link
+                              href={href}
+                              className="inline-flex items-center gap-2 hero-text-meta text-[#163C0F] hover:underline mt-4"
+                            >
+                              View More
+                              <ArrowRight className="h-4 w-4" />
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="flex items-center px-[8px] py-[17px]">
-                <p className="hero-text-practice-desc break-words">
-                  {desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+            </>
+          );
+        })()}
+
+
+        <Link
+          href="/practice-area"
+          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+        >
+          Read More &rarr;
+        </Link>
+
       </section>
 
       {/* Our Team */}
@@ -239,62 +311,15 @@ const Hero = () => {
         </h2>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:hidden">
-          {teamMembers.map(({ name, role, image, linkedin }) => (
-            <div key={name} className="h-full">
-              <div className="group relative rounded-[16px] border border-[#22461B]/10 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/20 hover:shadow-md">
-                <a
-                  href={linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${name} LinkedIn profile`}
-                  className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
-                >
-                  <Image
-                    src="/new/LinkedIn_icon.svg"
-                    alt="LinkedIn"
-                    width={44}
-                    height={44}
-                    className="w-5 h-5"
-                  />
-                </a>
+          {Object.values(teamMembers).map((member) => {
+            const [name, ...roleParts] = member.name.split(" - ");
+            const role = roleParts.join(" - ");
 
-                <div className="mb-3 mt-1">
-                  <div className="w-[90px] h-[90px] rounded-full overflow-hidden border-2 border-[#22461B]/15">
-                    <img
-                      src={image}
-                      alt={name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-1">
-                  <h3 className="hero-text-team-name mb-1 text-[#163C0F]">
-                    {name}
-                  </h3>
-
-                  <p className="hero-text-team-role text-[#336429]">
-                    {role}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <Carousel
-          opts={{ align: "start", loop: true }}
-          className="hidden w-full px-10 lg:block"
-        >
-          <CarouselContent className="-ml-4">
-            {teamMembers.map(({ name, role, image, linkedin }) => (
-              <CarouselItem
-                key={name}
-                className="pl-4 basis-1/2"
-              >
-                <div className="group relative rounded-[16px] border border-[#22461B]/10 bg-white p-4 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-[#22461B]/20 hover:shadow-md">
+            return (
+              <div key={member.id} className="h-full">
+                <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
                   <a
-                    href={linkedin}
+                    href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${name} LinkedIn profile`}
@@ -309,38 +334,173 @@ const Hero = () => {
                     />
                   </a>
 
-                  {/* Avatar */}
-                  <div className="mb-3 mt-1">
-                    <div className="w-[90px] h-[90px] rounded-full overflow-hidden border-2 border-[#22461B]/15">
+                  <div className="relative mb-4">
+                    <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
                       <img
-                        src={image}
+                        src={member.image}
                         alt={name}
                         className="w-full h-full object-cover"
                       />
                     </div>
+                    <span
+                      className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                      style={{ background: "#2A5A21" }}
+                    >
+                      {member.experience}
+                    </span>
                   </div>
 
-                  <div className="mt-1">
-                    {/* Name */}
-                    <h3 className="hero-text-team-name mb-1 text-[#163C0F]">
+                  <div className="mt-5 flex-1 flex flex-col w-full">
+                    <h2
+                      className="hero-text-team-name mb-1 text-[#163C0F]"
+                      style={{ fontSize: "50px", lineHeight: "1.1", fontWeight: 700 }}
+                    >
                       {name}
-                    </h3>
+                    </h2>
 
-                    {/* Role */}
-                    <p className="hero-text-team-role text-[#336429]">
+                    <p className="hero-text-team-role mb-5 text-[#336429]">
                       {role}
                     </p>
+
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+                          style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
+                        >
+                          View Profile
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+                          <DialogDescription className="hero-text-team-role text-[#336429]">
+                            Trusted experts bringing clarity and strategy to complex tax matters.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <TeamMember member={member} variant="detailed" />
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="hidden w-full px-10 lg:block"
+        >
+          <CarouselContent className="-ml-4">
+            {Object.values(teamMembers).map((member) => {
+              const [name, ...roleParts] = member.name.split(" - ");
+              const role = roleParts.join(" - ");
+
+              return (
+                <CarouselItem
+                  key={member.id}
+                  className="pl-4 basis-1/2"
+                >
+                  <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
+                    {/* <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${name} LinkedIn profile`}
+                    className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
+                  >
+                    <Image
+                      src="/new/LinkedIn_icon.svg"
+                      alt="LinkedIn"
+                      width={44}
+                      height={44}
+                      className="w-5 h-5"
+                    />
+                  </a> */}
+
+                    <div className="relative mb-4">
+                      <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+                        <img
+                          src={member.image}
+                          alt={name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <span
+                        className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                        style={{ background: "#2A5A21" }}
+                      >
+                        {member.experience}
+                      </span>
+                    </div>
+
+                    <div className="mt-5 flex-1  flex flex-col w-full">
+                      <h2
+                        className="hero-text-team-name mb-1 text-[#163C0F]"
+                        style={{ fontSize: "20px", lineHeight: "1.1", fontWeight: 700 }}
+                      >
+                        {name}
+                      </h2>
+
+                      <p className="hero-text-team-role mb-2 text-[#336429]">
+                        {role}
+                      </p>
+
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${name} LinkedIn profile`}
+                        className="flex pb-2 items-center justify-center transition-opacity duration-300 hover:opacity-90"
+                      >
+                        <Image
+                          src="/new/LinkedIn_icon.svg"
+                          alt="LinkedIn"
+                          width={44}
+                          height={44}
+                          className="w-5 h-5"
+                        />
+                      </a>
+
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button
+                            className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+                            style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
+                          >
+                            View Profile
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+                            <DialogDescription className="hero-text-team-role text-[#336429]">
+                              Trusted experts bringing clarity and strategy to complex tax matters.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <TeamMember member={member} variant="detailed" />
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                   </div>
 
-                </div>
-              </CarouselItem>
-            ))}
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
 
           <CarouselPrevious className="left-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
           <CarouselNext className="right-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
         </Carousel>
+        <Link
+          href="/team"
+          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+        >
+          Read More &rarr;
+        </Link>
       </section>
+
     </div>
   );
 };

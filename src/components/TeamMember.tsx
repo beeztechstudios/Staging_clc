@@ -2,8 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import Image from "next/image";
 
-import { Briefcase, GraduationCap, MapPin, User } from "lucide-react";
+import { Download, GraduationCap, Mail, MapPin, User } from "lucide-react";
 
 interface TeamMemberProps {
   member: {
@@ -15,6 +16,9 @@ interface TeamMemberProps {
     fullDescription: string[];
     expertise: string[];
     location: string;
+    linkedin?: string;
+    email?: string;
+    profilePdfUrl?: string;
     education: string[];
     achievements?: string[];
     experienceHighlights?: string[];
@@ -29,6 +33,9 @@ const teamMembers = {
     name: "Vivek Sarin - Founding Partner",
 
     image: "/vivek.webp",
+    linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
+    email: "vivek.sarin@clclaw.in",
+    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Vivek%20Sarin%20Profile.pdf?csf=1&web=1&e=CSlfBw",
     experience: "20+ Years",
     location: "New Delhi",
     shortDescription: "Founding Partner with over two decades of practice in tax, regulatory, and commercial disputes before the Supreme Court of India and key tribunals.",
@@ -53,6 +60,9 @@ const teamMembers = {
     id: "amit",
     name: "Amit Thukral - Partner and Chief Growth Officer",
     image: "/Amit.png",
+    linkedin: "https://www.linkedin.com/in/amitthukral/",
+    email: "amit.t@clclaw.in",
+    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Amit%20Thukral%20Profile.pdf?csf=1&web=1&e=RIsVqz",
     experience: "20+ Years",
     location: "New Delhi",
     shortDescription: "Partner and Chief Growth Officer with over 20 years of post-qualification experience in complex legal services practice, delivery, and management.",
@@ -90,6 +100,9 @@ const teamMembers = {
     name: "Shreyas Srivastava - Partner",
 
     image: "/shreya.webp",
+    linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
+    email: "shreyas.s@clclaw.in",
+    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Shreyas%20Shrivastava%20Profile.pdf?csf=1&web=1&e=qrZhW6",
     experience: "13+ Years",
     location: "New Delhi",
     shortDescription: "Partner with over 13 years of dedicated experience across direct and indirect tax, leading high-stakes tax litigation and advisory mandates.",
@@ -115,6 +128,9 @@ const teamMembers = {
     name: "Divyanshi Singh - Associate Partner",
 
     image: "/images/divyanshi.jpeg",
+    linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
+    email: "divyanshi.s@clclaw.in",
+    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Divyanshi%20Singh%20Profile.pdf?csf=1&web=1&e=J21ASG",
     experience: "9+ Years",
     location: "New Delhi",
     shortDescription: "Associate Partner with over 9 years of experience in healthcare regulation, direct and indirect taxation, and GST-focused advisory and dispute resolution matters.",
@@ -150,7 +166,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         <div className="max-w-4xl">
 
           {/* Header */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start gap-6 mb-8">
             {/* Avatar */}
             <div className="relative shrink-0">
               <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
@@ -176,24 +192,77 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
               </span>
             </div>
 
-            {/* Name + meta */}
-            <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
-              <h2
-                className="hero-text-team-name font-bolder mt-2 mb-1 text-[#163C0F]"
-                style={{ fontSize: "clamp(34px, 4vw, 42px)", lineHeight: "1.1" }}
-              >
-                {memberName}
-              </h2>
-              {memberDesignation && (
-                <p className="hero-text-team-role mb-2">{memberDesignation}</p>
-              )}
-              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 mb-4">
-                {/* <span className="hero-text-team-role flex items-center gap-1">
-                  <Briefcase className="w-3 h-3" /> {member.experience}
-                </span> */}
-                <span className="hero-text-team-role flex items-center gap-1">
-                  <MapPin className="w-3 h-3" /> {member.location}
-                </span>
+            {/* Name + meta + actions */}
+            <div className="mt-4 md:mt-0 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-5 items-start">
+              <div className="text-center md:text-left">
+                <h2
+                  className="hero-text-team-name font-bolder mt-2 mb-1 text-[#163C0F]"
+                  style={{ fontSize: "clamp(34px, 4vw, 42px)", lineHeight: "1.1" }}
+                >
+                  {memberName}
+                </h2>
+                {memberDesignation && (
+                  <p className="hero-text-team-role mb-2">{memberDesignation}</p>
+                )}
+                <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2">
+                  <span className="hero-text-team-role flex items-center gap-1">
+                    <MapPin className="w-3 h-3" /> {member.location}
+                  </span>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-[280px] border border-[#22461B]/20 rounded-[12px] p-3 bg-[#F7FBF5]">
+                {/* <p className="hero-text-expertise-label text-[#336429] mb-2 text-left">Connect</p> */}
+                <div className="flex flex-col gap-2">
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hero-text-practice-desc inline-flex items-center gap-2 text-[#163C0F] hover:underline"
+                    >
+                      <Image
+                        src="/new/LinkedIn_icon.svg"
+                        alt="LinkedIn"
+                        width={16}
+                        height={16}
+                        className="w-4 h-4"
+                      />
+                      LinkedIn
+                    </a>
+                  ) : (
+                    <span className="hero-text-practice-desc text-[#374151]">LinkedIn link pending</span>
+                  )}
+
+                  {member.email ? (
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="hero-text-practice-desc inline-flex items-center gap-2 text-[#163C0F] hover:underline"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {member.email}
+                    </a>
+                  ) : (
+                    <span className="hero-text-practice-desc text-[#374151] inline-flex items-center gap-2">
+                      <Mail className="w-4 h-4" />
+                      Email pending
+                    </span>
+                  )}
+
+                  {member.profilePdfUrl ? (
+                    <Button asChild className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] text-white">
+                      <a href={member.profilePdfUrl} target="_blank" rel="noopener noreferrer">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Profile
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button disabled className="w-full bg-[#163C0F]/60 text-white cursor-not-allowed">
+                      <Download className="w-4 h-4 mr-2" />
+                      PDF link pending
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -294,7 +363,9 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   }
 
   return (
-    <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
+    <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full relative">
+
+
 
       {/* Avatar + experience badge */}
       <div className="relative mb-4">
@@ -321,14 +392,56 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         </span>
       </div>
 
-      {/* Name */}
-      <h2 className="hero-text-team-name mt-5  mb-1">
-        {memberName}
-      </h2>
+      <div className="mt-5 flex-1 flex flex-col w-full">
+        <h2
+          className="hero-text-team-name mb-1 text-[#163C0F]"
+          style={{ fontSize: "20px", lineHeight: "1.1", fontWeight: 700 }}
+        >
+          {memberName}
+        </h2>
 
-      {memberDesignation && (
-        <p className="hero-text-team-role mb-2">{memberDesignation}</p>
-      )}
+        {memberDesignation && (
+          <p className="hero-text-team-role mb-2 text-[#336429]">{memberDesignation}</p>
+        )}
+
+        {member.linkedin && (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${memberName} LinkedIn profile`}
+            className=" mb-2 flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
+          >
+            <Image
+              src="/new/LinkedIn_icon.svg"
+              alt="LinkedIn"
+              width={44}
+              height={44}
+              className="w-5 h-5"
+            />
+          </a>
+        )}
+
+        {/* View Profile button */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+              style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
+            >
+              View Profile
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+              <DialogDescription className="hero-text-team-role text-[#336429]">
+                Trusted experts bringing clarity and strategy to complex tax matters.
+              </DialogDescription>
+            </DialogHeader>
+            <TeamMember member={member} variant="detailed" />
+          </DialogContent>
+        </Dialog>
+      </div>
 
       {/* Location */}
       {/* <p className="hero-text-team-role mb-5 flex items-center justify-center gap-1">
@@ -357,25 +470,6 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         </div>
       </div> */}
 
-      {/* View Profile button */}
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-            style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
-          >
-            View Profile
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Team Member Profile</DialogTitle>
-            {/* <DialogDescription className="sr-only">
-              Detailed profile information.
-            </DialogDescription> */}
-          </DialogHeader>
-          <TeamMember member={member} variant="detailed" />
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

@@ -12,21 +12,21 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
   const pathname = usePathname();
 
   const menuItems = [
-    { label: "HOME", key: "home", href: "/" },
-    { label: "ABOUT CLC", key: "about", href: "/about", separator: true },
+    { label: "HOME", key: "home", href: "/", separator: true },
+    { label: "ABOUT CLC", key: "about", href: "/about" },
     { label: "PRACTICE AREAS", key: "expertise", href: "/practice-area" },
     { label: "OUR TEAM", key: "team", href: "/team" },
     { label: "INSIGHTS", key: "insights", href: "/insights" },
-    { label: "NEWS AND UPDATES", key: "content", href: "/news", separator: true },
+    { label: "NEWS & UPDATES", key: "content", href: "/news", separator: true },
     // { label: "MATTER UPDATES", key: "content", href: "/matter-updates" },
     { label: "CONTACT", key: "contact", href: "/contact", separator: true },
     // { label: "CAREER OPPORTUNITIES", key: "career", href: "/career" },
   ];
 
   const sections = [
-    { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform", key: "content" },
+    { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform", key: "content", href: "/news" },
     { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/matter-updates", key: "matter-updates" },
-    { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions", key: "hotline" },
+    { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions", key: "hotline", href: "https://youtube.com/@taxtalksbyclc?si=h-vS6V1ISGauJzXS" },
   ];
 
   const isMenuItemActive = (href: string, key: string) => {
@@ -39,7 +39,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
 
   return (
     <div
-      className="left-sidebar cursor-pointer flex flex-col sticky top-0 self-start"
+      className="left-sidebar cursor-pointer flex flex-col self-start"
       style={{ width: "188px", minWidth: "160px" }}
     >
       {/* Top dark green nav */}

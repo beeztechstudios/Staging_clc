@@ -54,11 +54,12 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
         <HeroBackground />
         <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4">
-          <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
-            Latest Tax Law News &amp; Legal Judgments
-          </p>
+          <h1 className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+            News & Update
+
+          </h1>
           <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
-            Stay informed with our latest case updates, news, and publications from Commercial Law Chambers.
+            Stay updated with our latest cases, insights, and firm news.
           </p>
         </div>
 

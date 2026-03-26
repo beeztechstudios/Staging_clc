@@ -29,9 +29,11 @@ const Team = () => {
       {/* Team Cards Section */}
       <section className="px-4 pb-8 mt-8 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.values(teamMembers).map((member) => (
-              <TeamMember key={member.id} member={member} />
+              <div key={member.id} className="h-full">
+                <TeamMember member={member} />
+              </div>
             ))}
           </div>
         </div>
