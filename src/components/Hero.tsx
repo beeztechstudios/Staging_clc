@@ -317,25 +317,9 @@ const Hero = () => {
 
             return (
               <div key={member.id} className="h-full">
-                <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${name} LinkedIn profile`}
-                    className="absolute right-3 top-3 inline-flex items-center justify-center transition-opacity duration-300 hover:opacity-90"
-                  >
-                    <Image
-                      src="/new/LinkedIn_icon.svg"
-                      alt="LinkedIn"
-                      width={44}
-                      height={44}
-                      className="w-5 h-5"
-                    />
-                  </a>
-
-                  <div className="relative mb-4">
-                    <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+                <div className="relative border border-[#22461B]/30 rounded-[16px] p-4 sm:p-5 flex flex-col items-center text-center h-full">
+                  <div className="relative mb-3 sm:mb-4">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-gray-100">
                       <img
                         src={member.image}
                         alt={name}
@@ -343,24 +327,40 @@ const Hero = () => {
                       />
                     </div>
                     <span
-                      className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                      className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-xs sm:text-sm"
                       style={{ background: "#2A5A21" }}
                     >
                       {member.experience}
                     </span>
                   </div>
 
-                  <div className="mt-5 flex-1 flex flex-col w-full">
+                  <div className="mt-3 sm:mt-4 flex-1 flex flex-col w-full">
                     <h2
-                      className="hero-text-team-name mb-1 text-[#163C0F]"
-                      style={{ fontSize: "50px", lineHeight: "1.1", fontWeight: 700 }}
+                      className="hero-text-team-name mb-1 text-[#163C0F] text-lg sm:text-xl"
+                      style={{ lineHeight: "1.2", fontWeight: 700 }}
                     >
                       {name}
                     </h2>
 
-                    <p className="hero-text-team-role mb-5 text-[#336429]">
+                    <p className="hero-text-team-role mb-4 text-[#336429] text-xs sm:text-sm">
                       {role}
                     </p>
+
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${name} LinkedIn profile`}
+                      className="flex pb-3 items-center justify-center transition-opacity duration-300 hover:opacity-90"
+                    >
+                      <Image
+                        src="/new/LinkedIn_icon.svg"
+                        alt="LinkedIn"
+                        width={44}
+                        height={44}
+                        className="w-5 h-5"
+                      />
+                    </a>
 
                     <Dialog>
                       <DialogTrigger asChild>
@@ -402,7 +402,7 @@ const Hero = () => {
                   key={member.id}
                   className="pl-4 basis-1/2"
                 >
-                  <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
+                  <div className="relative border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
                     {/* <a
                     href={linkedin}
                     target="_blank"
@@ -420,7 +420,7 @@ const Hero = () => {
                   </a> */}
 
                     <div className="relative mb-4">
-                      <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+                      <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-100">
                         <img
                           src={member.image}
                           alt={name}
@@ -428,22 +428,22 @@ const Hero = () => {
                         />
                       </div>
                       <span
-                        className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                        className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-sm"
                         style={{ background: "#2A5A21" }}
                       >
                         {member.experience}
                       </span>
                     </div>
 
-                    <div className="mt-5 flex-1  flex flex-col w-full">
+                    <div className="mt-4 flex-1  flex flex-col w-full">
                       <h2
-                        className="hero-text-team-name mb-1 text-[#163C0F]"
-                        style={{ fontSize: "20px", lineHeight: "1.1", fontWeight: 700 }}
+                        className="hero-text-team-name mb-1 text-[#163C0F] text-xl"
+                        style={{ lineHeight: "1.2", fontWeight: 700 }}
                       >
                         {name}
                       </h2>
 
-                      <p className="hero-text-team-role mb-2 text-[#336429]">
+                      <p className="hero-text-team-role mb-3 text-[#336429] text-sm">
                         {role}
                       </p>
 
