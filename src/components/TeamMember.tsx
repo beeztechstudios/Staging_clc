@@ -59,7 +59,7 @@ const teamMembers = {
   amit: {
     id: "amit",
     name: "Amit Thukral - Partner and Chief Growth Officer",
-    image: "/amit.png",
+    image: "/images/amit.png",
     linkedin: "https://www.linkedin.com/in/amitthukral/",
     email: "amit.t@clclaw.in",
     profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Amit%20Thukral%20Profile.pdf?csf=1&web=1&e=RIsVqz",
