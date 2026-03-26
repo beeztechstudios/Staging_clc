@@ -22,6 +22,9 @@ const Team = () => {
             >
               Leading Tax Experts
             </h1>
+            <p className="hero-text-subpara  text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8 px-1 sm:px-0">
+              Trusted experts bringing clarity and strategy to complex tax matters.
+            </p>
           </div>
         </div>
       </section>
