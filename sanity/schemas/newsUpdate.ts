@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'newsUpdate',
@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().max(100),
+      validation: (Rule) => Rule.required().max(200),
     }),
     defineField({
       name: 'slug',
@@ -17,7 +17,7 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96,
+        maxLength: 200,
       },
       validation: (Rule) => Rule.required(),
     }),
@@ -26,7 +26,7 @@ export default defineType({
       title: 'Excerpt',
       type: 'text',
       rows: 3,
-      validation: (Rule) => Rule.required().max(200),
+      validation: (Rule) => Rule.required().max(400),
     }),
     defineField({
       name: 'content',
@@ -36,24 +36,24 @@ export default defineType({
         {
           type: 'block',
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H3', value: 'h3'},
-            {title: 'H4', value: 'h4'},
+            { title: 'Normal', value: 'normal' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
           ],
           lists: [
-            {title: 'Bullet', value: 'bullet'},
-            {title: 'Number', value: 'number'},
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
           ],
           marks: {
             decorators: [
-              {title: 'Strong', value: 'strong'},
-              {title: 'Emphasis', value: 'em'},
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
             ],
           },
         },
         {
           type: 'image',
-          options: {hotspot: true},
+          options: { hotspot: true },
           fields: [
             {
               name: 'alt',
@@ -70,10 +70,10 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'Case Update', value: 'case-update'},
-          {title: 'News', value: 'news'},
-          {title: 'Publication', value: 'publication'},
-          {title: 'Deal Corner', value: 'deal-corner'},
+          { title: 'Case Update', value: 'case-update' },
+          { title: 'News', value: 'news' },
+          { title: 'Publication', value: 'publication' },
+          { title: 'Deal Corner', value: 'deal-corner' },
         ],
         layout: 'radio',
       },
@@ -148,7 +148,7 @@ export default defineType({
     {
       title: 'Published Date, New',
       name: 'publishedAtDesc',
-      by: [{field: 'publishedAt', direction: 'desc'}],
+      by: [{ field: 'publishedAt', direction: 'desc' }],
     },
   ],
 })

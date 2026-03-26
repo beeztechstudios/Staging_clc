@@ -365,6 +365,7 @@ const Hero = () => {
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button
+                          suppressHydrationWarning
                           className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
                           style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
                         >
@@ -466,6 +467,7 @@ const Hero = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <Button
+                            suppressHydrationWarning
                             className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
                             style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
                           >
