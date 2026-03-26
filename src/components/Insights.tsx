@@ -115,11 +115,11 @@ const Insights = () => {
                       <span className="bg-[#B3C7AB]/40 text-[#163C0F] hero-text-meta font-bold px-3 py-1 rounded-full border border-[#5A6F554D]/90">
                         {blog.category?.name || "Uncategorized"}
                       </span>
-                      {blog.isNew && (
+                      {/* {blog.isNew && (
                         <span className="bg-[#163C0F] !text-white hero-text-meta font-bold px-3 py-1 rounded-full">
                           New
                         </span>
-                      )}
+                      )} */}
                     </div>
 
                     {/* Title */}

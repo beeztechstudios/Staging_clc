@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 type LegalPageKey = "privacy-policy" | "terms-and-conditions" | "cookie-policy";
@@ -54,6 +55,30 @@ const legalContent: Record<
 
 const LegalPagePopupLink = ({ label, pageKey }: LegalPagePopupLinkProps) => {
     const page = legalContent[pageKey];
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <button
+                type="button"
+                className="cursor-pointer whitespace-nowrap transition-colors hover:text-[#163C0F]"
+                style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "11px",
+                    letterSpacing: "0.6px",
+                    color: "#6B7280",
+                    textTransform: "uppercase",
+                }}
+            >
+                {label}
+            </button>
+        );
+    }
 
     return (
         <Dialog>

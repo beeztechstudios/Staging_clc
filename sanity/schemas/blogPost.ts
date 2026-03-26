@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'blogPost',
@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().max(100),
+      validation: (Rule) => Rule.required().max(150),
     }),
     defineField({
       name: 'slug',
@@ -17,7 +17,7 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96,
+        maxLength: 150,
       },
       validation: (Rule) => Rule.required(),
     }),
@@ -36,24 +36,24 @@ export default defineType({
         {
           type: 'block',
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H3', value: 'h3'},
-            {title: 'H4', value: 'h4'},
+            { title: 'Normal', value: 'normal' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
           ],
           lists: [
-            {title: 'Bullet', value: 'bullet'},
-            {title: 'Number', value: 'number'},
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
           ],
           marks: {
             decorators: [
-              {title: 'Strong', value: 'strong'},
-              {title: 'Emphasis', value: 'em'},
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
             ],
           },
         },
         {
           type: 'image',
-          options: {hotspot: true},
+          options: { hotspot: true },
           fields: [
             {
               name: 'alt',
@@ -68,7 +68,7 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: {type: 'category'},
+      to: { type: 'category' },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -140,7 +140,7 @@ export default defineType({
     {
       title: 'Published Date, New',
       name: 'publishedAtDesc',
-      by: [{field: 'publishedAt', direction: 'desc'}],
+      by: [{ field: 'publishedAt', direction: 'desc' }],
     },
   ],
 })
