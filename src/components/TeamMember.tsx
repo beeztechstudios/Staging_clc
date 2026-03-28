@@ -397,13 +397,13 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       <div className="mt-5 flex-1 flex flex-col w-full">
         <h2
           className="hero-text-team-name mb-1 text-[#163C0F]"
-          style={{ fontSize: "20px", lineHeight: "1.1", fontWeight: 700 }}
+          style={{ fontSize: "22px", lineHeight: "1.1", fontWeight: 700 }}
         >
           {memberName}
         </h2>
 
         {memberDesignation && (
-          <p className="hero-text-team-role mb-2 text-[#336429]">{memberDesignation}</p>
+          <p className="hero-text-team-role  mb-2 text-[#336429]" style={{ fontSize: "16px" }}>{memberDesignation}</p>
         )}
 
         {member.linkedin && (
@@ -472,7 +472,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         </div>
       </div> */}
 
-    </div>
+    </div >
   );
 };
 

@@ -449,14 +449,14 @@ p.hero-text-title,
 .hero-text-team-name {
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 28px;
   color: #163C0F;
 }
 
 @media (min-width: 1024px) {
   .hero-text-team-name {
-    font-size: clamp(16px, 1.8vw, 16px);
+    font-size: clamp(17px, 1.8vw, 17px);
     line-height: 26px;
   }
 }
@@ -465,14 +465,14 @@ p.hero-text-title,
 .hero-text-team-role {
   font-family: "League Spartan", sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 24px;
   color: #5A6F55;
 }
 
 @media (min-width: 1024px) {
   .hero-text-team-role {
-    font-size: clamp(14px, 1.8vw, 14px);
+    font-size: clamp(15px, 1.8vw, 15px);
     line-height: 21px;
   }
 }

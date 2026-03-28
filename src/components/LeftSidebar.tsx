@@ -16,7 +16,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
     { label: "ABOUT CLC", key: "about", href: "/about" },
     { label: "PRACTICE AREAS", key: "expertise", href: "/practice-area" },
     { label: "OUR TEAM", key: "team", href: "/team" },
-    { label: "INSIGHTS", key: "insights", href: "/insights" },
+    { label: "INSIGHTS & Blog", key: "insights", href: "/insights" },
     { label: "NEWS & UPDATES", key: "content", href: "/news", separator: true },
     // { label: "MATTER UPDATES", key: "content", href: "/matter-updates" },
     { label: "CONTACT", key: "contact", href: "/contact", separator: true },
@@ -25,7 +25,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
 
   const sections = [
     { bold: "CLC", tag: "IN NEWS", subtitle: "How we perform", key: "content", href: "/news" },
-    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/news", key: "matter-updates" },
+    { bold: "CLC", tag: "MATTER UPDATES", subtitle: "See our recent matters", href: "/insights", key: "matter-updates" },
     { bold: "MATTER", tag: "Hotline", subtitle: "Latest discussions", key: "hotline", href: "https://youtube.com/@taxtalksbyclc?si=h-vS6V1ISGauJzXS" },
   ];
 

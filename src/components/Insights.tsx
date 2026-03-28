@@ -56,7 +56,7 @@ const Insights = () => {
             Insights & Blog
           </p>
           <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
-            Insights on GST law, input tax credit rules, and recent tax and  and commercial dispute rulings.
+            Insights on GST law, input tax credit rules, and recent tax and commercial dispute rulings.
           </p>
         </div>
 

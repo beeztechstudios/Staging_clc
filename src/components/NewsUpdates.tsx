@@ -3,10 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Download, Eye, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
 
@@ -28,11 +27,30 @@ interface NewsUpdatesProps {
 
 const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
   const [selectedType, setSelectedType] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
-  const filteredNews =
-    selectedType === "All"
-      ? initialNews
-      : initialNews.filter((news) => news.type === selectedType);
+  const filteredNews = useMemo(() => {
+    if (selectedType === "All") return initialNews;
+    return initialNews.filter((news) => news.type === selectedType);
+  }, [initialNews, selectedType]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredNews.length / itemsPerPage));
+
+  const paginatedNews = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredNews.slice(start, start + itemsPerPage);
+  }, [filteredNews, currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedType]);
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
 
   const typeList = ["All", "case-update", "news", "publication", "deal-corner"];
 
@@ -83,14 +101,14 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
           ))}
         </div>
         {filteredNews.length > 0 ? (
-          <div className="grid lg:grid-cols-2 gap-6">
-            {filteredNews.map((news) => (
-              <div
-                key={news._id}
-                className="bg-white border border-[#22461B]/30 rounded-[16px] p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
-              >
-                <div className="mb-4">
-                  <div className="flex items-start justify-between mb-3">
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {paginatedNews.map((news) => (
+                <article
+                  key={news._id}
+                  className="bg-white border border-[#22461B]/30 rounded-[16px] p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
+                >
+                  <div className="flex justify-between mb-4">
                     <span className="bg-[#B3C7AB]/40 text-[#163C0F] hero-text-meta font-bold px-3 py-1 rounded-full border border-[#5A6F554D]/90">
                       {getTypeDisplayName(news.type)}
                     </span>
@@ -101,18 +119,12 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                     )}
                   </div>
 
-
-                </div>
-
-                <div className="flex flex-col flex-grow">
                   {/* Image */}
-                  {news.featuredImage?.asset?._ref && (
+                  {news.featuredImage && (
                     <Link href={`/news/${news.slug.current}`} className="mb-4 block">
-                      <Image
+                      <img
                         src={urlFor(news.featuredImage).width(600).height(300).fit("crop").url()}
-                        alt={news.featuredImage.alt || news.title}
-                        width={600}
-                        height={300}
+                        alt={news.title}
                         className="w-full h-auto object-cover border border-[#22461B]/20 hover:border-[#163C0F] transition-all"
                       />
                     </Link>
@@ -120,28 +132,26 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
 
                   {/* Meta */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="hero-text-meta flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
-                      <span>{format(new Date(news.publishedAt), "MMMM d, yyyy")}</span>
-                    </div>
+                    <span className="hero-text-meta flex items-center gap-2">
+                      <Calendar className="h-4 w-4" /> {format(new Date(news.publishedAt), "MMMM d, yyyy")}
+                    </span>
                     {news.readTime && (
-                      <div className="hero-text-meta flex items-center gap-2">
-                        <Eye className="h-4 w-4" />
-                        <span>{news.readTime}</span>
-                      </div>
+                      <span className="hero-text-meta flex items-center gap-2">
+                        <Eye className="h-4 w-4" /> {news.readTime}
+                      </span>
                     )}
                   </div>
 
-                  <Link href={`/news/${news.slug.current}`} className="group">
-                    <h3 className="hero-text-card-title mb-3 group-hover:text-[#1a4a1a] transition-colors">
+                  <Link href={`/news/${news.slug.current}`} className="group mb-4 block">
+                    <h3 className="hero-text-card-title group-hover:text-[#1a4a1a] transition-colors">
                       {news.title}
                     </h3>
                   </Link>
 
-                  {/* Buttons */}
+                  {/* Actions */}
                   <div className="flex gap-3 mt-auto">
                     <Link href={`/news/${news.slug.current}`} className="flex-1">
-                      <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] text-white">
+                      <Button size="sm" className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] text-white">
                         <Eye className="mr-2 h-4 w-4" /> Read More
                       </Button>
                     </Link>
@@ -150,6 +160,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                         size="sm"
                         variant="outline"
                         className="border-[#163C0F] text-[#163C0F] hover:bg-[#163C0F] hover:text-white"
+                        asChild
                       >
                         <a href={news.downloadUrl} target="_blank" rel="noopener noreferrer">
                           <Download className="h-4 w-4" />
@@ -157,14 +168,39 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                       </Button>
                     )}
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                disabled={currentPage === 1}
+                className="border-[#163C0F] text-[#163C0F] hover:bg-[#163C0F] hover:text-white disabled:opacity-50"
+              >
+                Previous
+              </Button>
+
+              <span className="hero-text-meta text-[#163C0F]">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <Button
+                size="sm"
+                onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                disabled={currentPage === totalPages}
+                className="bg-[#163C0F] hover:bg-[#1a4a1a] text-white disabled:opacity-50"
+              >
+                Next
+              </Button>
+            </div>
+          </>
         ) : (
           <div
             className="px-[8px] py-[17px]"
-
+            style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
           >
             <p className="hero-text-practice-desc">No news updates found in this category.</p>
           </div>
