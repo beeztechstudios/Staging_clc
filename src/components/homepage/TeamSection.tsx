@@ -3,7 +3,7 @@ import Image from "next/image";
 const team = [
   { name: "Vivek Sarin", designation: "Partner", image: "https://res.cloudinary.com/ddbu8cm4z/image/upload/v1764677693/vivek_u4uf7o.jpg" },
   { name: "Shreyas Srivastava", designation: "Partner", image: "https://res.cloudinary.com/ddbu8cm4z/image/upload/v1764677693/shreya_t2gey6.jpg" },
-  { name: "Amit Thukral", designation: "Partner and Chief Growth Officer", image: "/amit.png" },
+  { name: "Amit Thukral", designation: "Partner and CGO", image: "/amit.png" },
 ];
 
 export default function TeamSection() {

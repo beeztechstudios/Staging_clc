@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 /**
  * Global metadata (defaults). Per-page metadata will override these.
@@ -148,6 +137,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <noscript>
           <link
             href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -156,7 +149,7 @@ export default function RootLayout({
         </noscript>
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="antialiased">
 
         {/* Google Tag Manager (script) */}
         <Script id="gtm-script" strategy="afterInteractive">

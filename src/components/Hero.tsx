@@ -157,7 +157,7 @@ const Hero = () => {
         </div>
         <Link
           href="/about"
-          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+          className="inline-flex items-center hero-text-meta text-[#163C0F] mt-5 hover:underline mb-0"
         >
           Read More &rarr;
         </Link>
@@ -294,7 +294,7 @@ const Hero = () => {
 
         <Link
           href="/practice-area"
-          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+          className="inline-flex items-center hero-text-meta mt-5 text-[#163C0F] hover:underline mb-0"
         >
           Read More &rarr;
         </Link>
@@ -341,7 +341,7 @@ const Hero = () => {
         </Carousel>
         <Link
           href="/team"
-          className="inline-flex items-center hero-text-meta text-[#163C0F] hover:underline mb-0"
+          className="inline-flex items-center mt-5 hero-text-meta text-[#163C0F] hover:underline mb-0"
         >
           Read More &rarr;
         </Link>

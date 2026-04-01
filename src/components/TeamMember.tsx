@@ -58,7 +58,7 @@ const teamMembers = {
   },
   amit: {
     id: "amit",
-    name: "Amit Thukral - Partner and Chief Growth Officer",
+    name: "Amit Thukral - Partner and CGO",
     image: "/images/amit.png",
     linkedin: "https://www.linkedin.com/in/amitthukral/",
     email: "amit.t@clclaw.in",
@@ -425,24 +425,26 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         )}
 
         {/* View Profile button */}
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-              style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
-            >
-              View Profile
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="w-[calc(100vw-20px)] sm:w-full max-w-4xl max-h-[88vh] sm:max-h-[90vh] bg-white overflow-y-auto p-3 sm:p-6">
-            <DialogHeader className="pr-9 sm:pr-10 pb-1">
-              <DialogTitle className="text-xl sm:text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
-              <DialogDescription className="hero-text-team-role text-[#336429]">
-                Trusted experts bringing clarity and strategy to complex tax matters.
-              </DialogDescription>
-            </DialogHeader>
-            <TeamMember member={member} variant="detailed" />
-          </DialogContent>
-        </Dialog>
+        <div suppressHydrationWarning>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+                style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
+              >
+                View Profile
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="w-[calc(100vw-20px)] sm:w-full max-w-4xl max-h-[88vh] sm:max-h-[90vh] bg-white overflow-y-auto p-3 sm:p-6">
+              <DialogHeader className="pr-9 sm:pr-10 pb-1">
+                <DialogTitle className="text-xl sm:text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+                <DialogDescription className="hero-text-team-role text-[#336429]">
+                  Trusted experts bringing clarity and strategy to complex tax matters.
+                </DialogDescription>
+              </DialogHeader>
+              <TeamMember member={member} variant="detailed" />
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
 
       {/* Location */}

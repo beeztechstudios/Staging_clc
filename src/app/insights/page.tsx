@@ -3,6 +3,7 @@
 // ---------------------------------------------
 import { Metadata } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
 import Layout from "@/components/Layout";
 import InsightsClientWrapper from "@/components/InsightsClientWrapper";
 
@@ -98,7 +99,9 @@ export default function InsightsPage() {
       />
 
       <Layout>
-        <InsightsClientWrapper />
+        <Suspense fallback={<div className="flex-1 bg-white px-4 py-12">Loading insights...</div>}>
+          <InsightsClientWrapper />
+        </Suspense>
       </Layout>
     </>
   );

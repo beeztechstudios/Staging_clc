@@ -285,7 +285,7 @@ p.hero-text-title,
 
 /* CTA Buttons */
 .hero-text-button {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -301,7 +301,7 @@ p.hero-text-title,
 
 /* Stats counter number */
 .hero-text-counter {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
@@ -360,7 +360,7 @@ p.hero-text-title,
 
 /* Section heading — "WELCOME TO…", "OUR DISTINCTION", etc. */
 .hero-text-section-heading {
-  font-family: Arial, sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 28px;
@@ -377,7 +377,7 @@ p.hero-text-title,
 
 /* Body paragraph — welcome text, distinction cells */
 .hero-text-body {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -394,7 +394,7 @@ p.hero-text-title,
 
 /* Distinction grid cell text */
 .hero-text-distinction {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
@@ -412,7 +412,7 @@ p.hero-text-title,
 
 /* Practice area title */
 .hero-text-practice-title {
-  font-family: "Inter", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 26px;
@@ -430,7 +430,7 @@ p.hero-text-title,
 
 /* Practice area description */
 .hero-text-practice-desc {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
@@ -447,7 +447,7 @@ p.hero-text-title,
 
 /* Team member name */
 .hero-text-team-name {
-  font-family: "Inter", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 500;
   font-size: 22px;
   line-height: 28px;
@@ -463,7 +463,7 @@ p.hero-text-title,
 
 /* Team member role / degree */
 .hero-text-team-role {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -479,7 +479,7 @@ p.hero-text-title,
 
 /* Team expertise label */
 .hero-text-expertise-label {
-  font-family: "Inter", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 600;
   font-size: 17px;
   color: #336429;
@@ -540,7 +540,7 @@ p.hero-text-title,
 
 /* Article body content wrapper */
 .hero-text-article-body {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 28px;

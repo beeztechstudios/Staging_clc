@@ -7,12 +7,14 @@ import { useBlogPosts, useCategories } from "@/hooks/useSanityData";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
 
 const Insights = () => {
   const { data: blogs = [], isLoading: blogsLoading } = useBlogPosts();
   const { data: categories = [] } = useCategories();
+  const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
@@ -43,6 +45,13 @@ const Insights = () => {
       setCurrentPage(totalPages);
     }
   }, [currentPage, totalPages]);
+
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [searchParams]);
 
   return (
     <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
