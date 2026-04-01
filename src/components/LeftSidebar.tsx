@@ -85,6 +85,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
         <div className="flex flex-col divide-y divide-white/20">
           {sections.map((s, i) => {
             const isActive = activeSection === s.key;
+            const isExternal = s.href?.startsWith('http');
             const content = (
               <div className={`px-3 py-[5px] cursor-pointer transition-colors ${isActive ? 'bg-white/30' : 'hover:bg-white/10'}`}>
                 <div className="flex items-center gap-[5px]">
@@ -131,7 +132,17 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
 
             return (
               <div key={i}>
-                {s.href ? <Link href={s.href}>{content}</Link> : content}
+                {s.href ? (
+                  isExternal ? (
+                    <a href={s.href} target="_blank" rel="noopener noreferrer">
+                      {content}
+                    </a>
+                  ) : (
+                    <Link href={s.href}>{content}</Link>
+                  )
+                ) : (
+                  content
+                )}
               </div>
             );
           })}
