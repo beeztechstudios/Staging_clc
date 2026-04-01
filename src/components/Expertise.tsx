@@ -41,14 +41,14 @@ const Expertise = () => {
     <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
       {/* Header */}
-      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
+      <section className="relative isolate px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
         {/* <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-8 right-1/4 h-40 w-40 rounded-full bg-[#DCECCF] blur-3xl opacity-70" />
           <div className="absolute bottom-0 left-8 h-32 w-32 rounded-full bg-[#CFE2C8] blur-2xl opacity-60" />
         </div> */}
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <h1 className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+        <div className="relative z-10 max-w-6xl mx-auto text-center flex flex-col items-center">
+          <h1 className="hero-text-title hero-title text-[#163C0F] mb-[6px] text-center">
             Comprehensive Tax Services
           </h1>
         </div>

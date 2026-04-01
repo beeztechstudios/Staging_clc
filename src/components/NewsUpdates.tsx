@@ -69,10 +69,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
+      <section className="relative isolate px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
-        <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4">
-          <h1 className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+        <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4 flex flex-col items-center">
+          <h1 className="hero-text-title hero-title text-[#163C0F] mb-[6px] text-center">
             News & Update
 
           </h1>
@@ -176,7 +176,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
               <Button
                 size="sm"
                 variant="outline"
-                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                onClick={() => {
+                  setCurrentPage((prev) => Math.max(1, prev - 1));
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 disabled={currentPage === 1}
                 className="border-[#163C0F] text-[#163C0F] hover:bg-[#163C0F] hover:text-white disabled:opacity-50"
               >
@@ -189,7 +192,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
 
               <Button
                 size="sm"
-                onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                onClick={() => {
+                  setCurrentPage((prev) => Math.min(totalPages, prev + 1));
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 disabled={currentPage === totalPages}
                 className="bg-[#163C0F] hover:bg-[#1a4a1a] text-white disabled:opacity-50"
               >

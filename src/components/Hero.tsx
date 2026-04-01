@@ -231,6 +231,8 @@ const Hero = () => {
                     <div
                       key={title}
                       className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] overflow-hidden"
+                      onMouseEnter={() => setOpenPracticeTitle(title)}
+                      onMouseLeave={() => setOpenPracticeTitle(null)}
                       style={
                         index % 2 === 0
                           ? {
@@ -248,7 +250,6 @@ const Hero = () => {
                       <div className="px-[8px] py-[17px] flex items-center sm:justify-end">
                         <button
                           type="button"
-                          onClick={() => setOpenPracticeTitle(isOpen ? null : title)}
                           className="hero-text-practice-desc inline-flex items-center gap-1 text-[#163C0F] hover:underline"
                         >
                           View practice scope

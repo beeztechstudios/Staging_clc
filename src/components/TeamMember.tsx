@@ -35,7 +35,7 @@ const teamMembers = {
     image: "/vivek.png",
     linkedin: "https://www.linkedin.com/in/viveksarinattorney/",
     email: "vivek.sarin@clclaw.in",
-    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Vivek%20Sarin%20Profile.pdf?csf=1&web=1&e=CSlfBw",
+    profilePdfUrl: "/Vivek_Sarin_Profile.pdf",
     experience: "20+ Years",
     location: "New Delhi",
     shortDescription: "Founding Partner with over two decades of practice in tax, regulatory, and commercial disputes before the Supreme Court of India and key tribunals.",
@@ -62,7 +62,7 @@ const teamMembers = {
     image: "/images/amit.png",
     linkedin: "https://www.linkedin.com/in/amitthukral/",
     email: "amit.t@clclaw.in",
-    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Amit%20Thukral%20Profile.pdf?csf=1&web=1&e=RIsVqz",
+    profilePdfUrl: "/Amit_Thukral_Profile.pdf",
     experience: "20+ Years",
     location: "New Delhi",
     shortDescription: "Partner and Chief Growth Officer with over 20 years of post-qualification experience in complex legal services practice, delivery, and management.",
@@ -102,7 +102,7 @@ const teamMembers = {
     image: "/Shreyash.png",
     linkedin: "https://www.linkedin.com/in/shreyasshrivastava/",
     email: "shreyas.s@clclaw.in",
-    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Shreyas%20Shrivastava%20Profile.pdf?csf=1&web=1&e=qrZhW6",
+    profilePdfUrl: "/Shreyas_Shrivastava_Profile.pdf",
     experience: "13+ Years",
     location: "New Delhi",
     shortDescription: "Partner with over 13 years of dedicated experience across direct and indirect tax, leading high-stakes tax litigation and advisory mandates.",
@@ -130,7 +130,7 @@ const teamMembers = {
     image: "/divyanshi.png",
     linkedin: "https://www.linkedin.com/in/divyanshi-singh-0a5882295/",
     email: "divyanshi.s@clclaw.in",
-    profilePdfUrl: "https://ayta-my.sharepoint.com/:b:/r/personal/anushka_ayta-legaltech_com/Documents/CLC%20Partner%20Profiles/Divyanshi%20Singh%20Profile.pdf?csf=1&web=1&e=J21ASG",
+    profilePdfUrl: "/Divyanshi_Singh_Profile.pdf",
     experience: "9+ Years",
     location: "New Delhi",
     shortDescription: "Associate Partner with over 9 years of experience in healthcare regulation, direct and indirect taxation, and GST-focused advisory and dispute resolution matters.",
@@ -425,26 +425,29 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         )}
 
         {/* View Profile button */}
-        <div suppressHydrationWarning>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-                style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
-              >
-                View Profile
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="w-[calc(100vw-20px)] sm:w-full max-w-4xl max-h-[88vh] sm:max-h-[90vh] bg-white overflow-y-auto p-3 sm:p-6">
-              <DialogHeader className="pr-9 sm:pr-10 pb-1">
-                <DialogTitle className="text-xl sm:text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
-                <DialogDescription className="hero-text-team-role text-[#336429]">
-                  Trusted experts bringing clarity and strategy to complex tax matters.
-                </DialogDescription>
-              </DialogHeader>
-              <TeamMember member={member} variant="detailed" />
-            </DialogContent>
-          </Dialog>
-        </div>
+        <Dialog>
+          <DialogTrigger asChild suppressHydrationWarning>
+            <Button
+              className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+              style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
+              suppressHydrationWarning
+            >
+              View Profile
+            </Button>
+          </DialogTrigger>
+          <DialogContent
+            className="w-[calc(100vw-20px)] sm:w-full max-w-4xl max-h-[88vh] sm:max-h-[90vh] bg-white overflow-y-auto p-3 sm:p-6"
+            suppressHydrationWarning
+          >
+            <DialogHeader className="pr-9 sm:pr-10 pb-1">
+              <DialogTitle className="text-xl sm:text-2xl font-bold poppins text-[#163C0F]">Leading Tax Experts</DialogTitle>
+              <DialogDescription className="hero-text-team-role text-[#336429]">
+                Trusted experts bringing clarity and strategy to complex tax matters.
+              </DialogDescription>
+            </DialogHeader>
+            <TeamMember member={member} variant="detailed" />
+          </DialogContent>
+        </Dialog>
       </div>
 
       {/* Location */}

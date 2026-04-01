@@ -9,12 +9,12 @@ const Team = () => {
     <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
       {/* Team Hero Section */}
-      <section className="relative isolate px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:px-12 md:pt-4 lg:px-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip">
+      <section className="relative isolate px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="text-center">
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
+          <div className="text-center w-full">
             <h1
-              className="hero-text-title hero-title mb-[6px] text-center text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] md:mt-[104px] lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
+              className="hero-text-title hero-title mb-[6px] text-[#163C0F] text-[34px] leading-[38px] tracking-[1px] sm:text-[40px] sm:leading-[44px] lg:text-[46px] lg:leading-[50px] lg:tracking-[2px]"
               style={{
                 fontFamily: "League Spartan, sans-serif",
                 fontWeight: 700,
