@@ -414,7 +414,7 @@ p.hero-text-title,
 .hero-text-practice-title {
   font-family: "League Spartan", sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 26px;
   letter-spacing: 0.01em;
   text-transform: none;
@@ -423,7 +423,7 @@ p.hero-text-title,
 
 @media (min-width: 1024px) {
   .hero-text-practice-title {
-    font-size: clamp(16px, 1.8vw, 16px);
+    font-size: clamp(18px, 1.8vw, 16px);
     line-height: 20px;
   }
 }

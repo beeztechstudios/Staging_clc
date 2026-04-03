@@ -63,7 +63,7 @@ export default function CommercialRegulatoryDisputesPage() {
                         >
                             &larr; Back to Practice Areas
                         </Link>
-                        <h1 className="hero-text-title text-[#111827] mb-2">Commercial & Regulatory Disputes Practice</h1>
+                        <h1 className="hero-text-title text-[#163C0f] mb-2">Commercial & Regulatory Disputes Practice</h1>
                         <p className="hero-text-body italic text-[#111827] mb-6">
                             Resolving Complex Commercial Conflicts and Regulatory Challenges With Precision, Intelligence & Sector-Driven Strategy
                         </p>

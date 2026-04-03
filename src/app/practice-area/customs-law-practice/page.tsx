@@ -90,7 +90,7 @@ export default function CustomsLawPracticePage() {
                         >
                             &larr; Back to Practice Areas
                         </Link>
-                        <h1 className="hero-text-title text-[#111827] mb-2">Customs Law Practice</h1>
+                        <h1 className="hero-text-title text-[#163C0F] mb-2">Customs Law Practice</h1>
                         <p className="hero-text-body italic text-[#111827] mb-6">
                             Advisory, Compliance, Enforcement Defence & Litigation Across India's Cross-Border Trade Ecosystem
                         </p>

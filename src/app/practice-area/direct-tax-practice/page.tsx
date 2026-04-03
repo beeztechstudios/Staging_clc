@@ -80,7 +80,7 @@ export default function DirectTaxPracticePage() {
                         >
                             &larr; Back to Practice Areas
                         </Link>
-                        <h1 className="hero-text-title text-[#111827] mb-2">Direct Tax Practice</h1>
+                        <h1 className="hero-text-title text-[#163C0F] mb-2">Direct Tax Practice</h1>
                         <p className="hero-text-body italic text-[#111827] mb-6">
                             End-to-End Advisory, Compliance, and Dispute Resolution Across Corporate, Individual, and Cross-Border Tax Matters
                         </p>

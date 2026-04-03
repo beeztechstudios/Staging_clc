@@ -85,7 +85,7 @@ export default function IndirectTaxPracticePage() {
                         >
                             &larr; Back to Practice Areas
                         </Link>
-                        <h1 className="hero-text-title text-[#111827] mb-2">Indirect Tax Practice (GST & Customs)</h1>
+                        <h1 className="hero-text-title text-[#163C0F] mb-2">Indirect Tax Practice (GST & Customs)</h1>
                         <p className="hero-text-body italic text-[#111827] mb-6">
                             Comprehensive Advisory, Compliance Management, Enforcement Support & Litigation Across GST, Customs, and Allied Indirect Taxes
                         </p>
