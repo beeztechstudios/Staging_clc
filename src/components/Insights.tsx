@@ -58,13 +58,13 @@ const Insights = () => {
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative isolate px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip flex items-center justify-center">
+      <section className="relative isolate px-4 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-1 sm:space-y-1 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
         <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4 flex flex-col items-center">
-          <p className="hero-text-title hero-title text-[#163C0F] mb-[6px] text-center">
+          <h1 className="hero-text-title hero-title text-[#163C0F] mb-[6px] text-center">
             Insights & Blog
-          </p>
-          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
+          </h1>
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-3">
             Insights on GST law, input tax credit rules, and recent tax and commercial dispute rulings.
           </p>
         </div>

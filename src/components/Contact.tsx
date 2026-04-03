@@ -173,15 +173,15 @@ const Contact = () => {
       <HeroAnimations />
 
       {/* Header */}
-      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+      <section className="relative isolate px-4 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-1 sm:space-y-1 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
-        <div className="mx-auto max-w-2xl px-2">
-          <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+        <div className="relative z-10 mx-auto max-w-2xl px-0 sm:px-4 flex flex-col items-center">
+          <h1 className="hero-text-title hero-title text-[#163C0F] mb-[6px] text-center">
             Contact Us
+          </h1>
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-6 sm:mb-8">
+            Connect with India’s leading tax experts.
           </p>
-          {/* <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
-            Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We're here to protect your interests.
-          </p> */}
         </div>
       </section>
 

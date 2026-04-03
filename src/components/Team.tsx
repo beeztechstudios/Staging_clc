@@ -9,7 +9,7 @@ const Team = () => {
     <div className="flex-1 bg-white xl:mx-10 overflow-x-hidden">
       <HeroAnimations />
       {/* Team Hero Section */}
-      <section className="relative isolate px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-10 sm:space-y-12 overflow-hidden overflow-x-clip flex items-center justify-center">
+      <section className="relative isolate px-4 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-12 md:px-12 md:pt-12 md:pb-12 lg:px-16 lg:pt-40 lg:pb-16 text-center space-y-1 sm:space-y-1 overflow-hidden overflow-x-clip flex items-center justify-center">
         <HeroBackground />
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
           <div className="text-center w-full">
