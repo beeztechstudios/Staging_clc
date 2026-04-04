@@ -103,21 +103,49 @@ const Expertise = () => {
               title: "Direct Tax Practice",
               href: "/practice-area/direct-tax-practice",
               description: "Our Direct Tax practice delivers comprehensive, strategic, and forward-looking tax support to businesses, high-net-worth individuals, multinational groups, funds, and promoter families. CLC's team brings deep industry experience, technical expertise, and a solution-oriented approach to help clients navigate the evolving landscape of Indian taxation, global tax reforms, and multi-jurisdictional tax challenges.",
+              points: [
+                "Corporate & Individual Tax Advisory",
+                "Cross-Border Tax Structuring & International Tax",
+                "Transfer Pricing",
+                "Transaction Structuring & Reorganisations",
+                "Tax Disputes & Litigation",
+              ],
             },
             {
               title: "Indirect Tax Practice (GST & Customs)",
               href: "/practice-area/indirect-tax-gst-customs",
               description: "Our Indirect Tax practice is recognised for delivering practical, sector-focused, and legally robust advice that empowers businesses to manage GST and customs complexities with confidence. As businesses evolve, GST rules, investigation practices, and judicial trends continue to shift, making expert guidance indispensable.",
+              points: [
+                "GST Advisory, Compliance & Audit Management",
+                "Supply Chain Planning & Optimisation",
+                "Classification, Valuation & ITC Matters",
+                "Customs Advisory",
+                "Investigations & Enforcement",
+                "Litigation & Appellate Representation",
+              ],
             },
             {
               title: "Commercial & Regulatory Disputes Practice",
               href: "/practice-area/commercial-regulatory-disputes",
               description: "CLC's Commercial & Regulatory Disputes practice specialises in managing diverse, nuanced, and high-stakes conflicts that arise across industries and regulatory frameworks. Our strength lies in combining litigation excellence with a deep understanding of operational realities, governance structures, and sector-specific regulations.",
+              points: [
+                "Commercial Disputes",
+                "Regulatory Disputes & Enforcement",
+                "Sector-Focused Regulatory Support",
+              ],
             },
             {
               title: "Customs Law Practice",
               href: "/practice-area/customs-law-practice",
               description: "CLC's Customs Law practice offers comprehensive legal support across the full spectrum of import-export regulations, global trade compliance, port procedures, investigations, and high-stakes customs litigation. With India's trade environment becoming increasingly enforcement-driven, led by DRI, SIIB, Customs Audit, and valuation/anti-smuggling wing, businesses require precise, strategic, and commercially aware guidance. Our team brings together deep legal expertise, sectoral knowledge, and an understanding of global supply chains to help clients manage risk, ensure smooth operations, and resolve disputes efficiently.",
+              points: [
+                "Customs Classification, Valuation & Duty Assessment",
+                "FTA/Origin Benefits & Cross-Border Structuring",
+                "Port Clearance, Warehousing & Bonded Operations",
+                "DGFT, FTP Schemes & Incentive Advisory",
+                "Investigations, Enforcement & Anti-Smuggling Proceedings",
+                "Customs Litigation & Appellate Representation",
+              ],
             },
           ];
 
@@ -145,6 +173,8 @@ const Expertise = () => {
                           }
                           : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
                       }
+                      onMouseEnter={() => setOpenPracticeTitle(title)}
+                      onMouseLeave={() => setOpenPracticeTitle(null)}
                     >
                       <div className="flex items-center px-[8px] py-[17px]">
                         <p className="hero-text-practice-title ">
@@ -155,7 +185,6 @@ const Expertise = () => {
                       <div className="px-[8px] py-[17px] flex items-center sm:justify-end">
                         <button
                           type="button"
-                          onClick={() => setOpenPracticeTitle(isOpen ? null : title)}
                           className="hero-text-practice-desc inline-flex items-center gap-1 text-[#163C0F] hover:underline"
                         >
                           View practice scope
@@ -171,13 +200,21 @@ const Expertise = () => {
                       {isOpen && (
                         <div className="sm:col-span-2 px-[8px] pb-[17px]">
                           <div className="bg-white/85 p-4 sm:p-5">
-                            <p className="hero-text-practice-desc text-[#1F2937] leading-relaxed">
+                            <p className="hero-text-practice-desc text-[#1F2937] leading-relaxed mb-4">
                               {description}
                             </p>
 
+                            <ul className="list-disc list-inside space-y-2 mb-4">
+                              {practiceAreas.find(pa => pa.title === title)?.points?.map((point, i) => (
+                                <li key={i} className="hero-text-practice-desc text-[#1F2937]">
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+
                             <Link
                               href={href}
-                              className="inline-flex items-center gap-2 hero-text-meta text-[#163C0F] hover:underline mt-4"
+                              className="inline-flex items-center gap-2 hero-text-meta text-[#163C0F] hover:underline"
                             >
                               View More
                               <ArrowRight className="h-4 w-4" />
