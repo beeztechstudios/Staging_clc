@@ -205,7 +205,7 @@ const Contact = () => {
 
                   if (isPhone) {
                     return (
-                      <p key={i} className="hero-text-practice-desc">
+                      <p key={i} className="hero-text-distinction">
                         <a
                           href={`tel:${detail.replace(/\s|-/g, "")}`}
                           className="text-[#163C0F] font-semibold hover:underline"
@@ -216,7 +216,7 @@ const Contact = () => {
                     );
                   } else if (isEmail) {
                     return (
-                      <p key={i} className="hero-text-practice-desc">
+                      <p key={i} className="hero-text-distinction">
                         <a
                           href={`mailto:${detail}`}
                           className="text-[#163C0F] font-semibold hover:underline"
@@ -227,7 +227,7 @@ const Contact = () => {
                     );
                   } else {
                     return (
-                      <p key={i} className="hero-text-practice-desc text-[#666666]">
+                      <p key={i} className="hero-text-distinction text-[#666666]">
                         {detail}
                       </p>
                     );
@@ -252,7 +252,7 @@ const Contact = () => {
               <div>
                 <p className="text-sm text-[#666666] mb-1"> <a
                   href="mailto:legal@clclaw.in"
-                  className="text-[#163C0F] font-semibold hover:underline break-all"
+                  className="text-[#163C0F] hero-text-practice-title font-semibold hover:underline break-all"
                 >
                   legal@clclaw.in
                 </a></p>
@@ -266,7 +266,7 @@ const Contact = () => {
               <div>
                 <p className="text-sm text-[#666666] mb-1"><a
                   href="tel:+919999920118"
-                  className="text-[#163C0F] font-semibold hover:underline"
+                  className="text-[#163C0F] hero-text-practice-title font-semibold hover:underline"
                 >
                   +91 99999 20118
                 </a></p>

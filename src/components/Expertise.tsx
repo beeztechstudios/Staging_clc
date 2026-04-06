@@ -200,13 +200,13 @@ const Expertise = () => {
                       {isOpen && (
                         <div className="sm:col-span-2 px-[8px] pb-[17px]">
                           <div className="bg-white/85 p-4 sm:p-5">
-                            <p className="hero-text-practice-desc text-[#1F2937] leading-relaxed mb-4">
+                            <p className="hero-text-distinction text-[#1F2937] leading-relaxed mb-4">
                               {description}
                             </p>
 
                             <ul className="list-disc list-inside space-y-2 mb-4">
                               {practiceAreas.find(pa => pa.title === title)?.points?.map((point, i) => (
-                                <li key={i} className="hero-text-practice-desc text-[#1F2937]">
+                                <li key={i} className="hero-text-distinction text-[#1F2937]">
                                   {point}
                                 </li>
                               ))}

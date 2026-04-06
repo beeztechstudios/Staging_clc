@@ -265,7 +265,7 @@ const Hero = () => {
                       {isOpen && (
                         <div className="sm:col-span-2 px-[8px] pb-[17px]">
                           <div className="bg-white/85 p-4 sm:p-5">
-                            <ul className="space-y-2 hero-text-practice-desc text-[#1F2937] list-disc pl-5">
+                            <ul className="space-y-2 hero-text-distinction text-[#1F2937] list-disc pl-5">
                               {points.map((point) => (
                                 <li key={point} className="break-words">
                                   {point}
