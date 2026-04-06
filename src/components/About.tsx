@@ -161,7 +161,7 @@ const About = () => {
                   </div> */}
                 <div>
                   <p className="hero-text-practice-title mb-[4px]">{title}</p>
-                  <p className="hero-text-practice-desc">{description}</p>
+                  <p className="hero-text-distinction">{description}</p>
                 </div>
               </div>
             );
@@ -198,7 +198,7 @@ const About = () => {
                 <span className="hero-text-practice-title">{title}</span>
               </div>
               <div className="flex items-start sm:items-center px-[8px] py-[14px] sm:py-[17px]">
-                <p className="hero-text-practice-desc">{description}</p>
+                <p className="hero-text-distinction">{description}</p>
               </div>
             </div>
           ))}
