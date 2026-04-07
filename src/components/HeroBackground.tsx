@@ -13,6 +13,8 @@ export default function HeroBackground() {
                 src="/new/heroGlass.svg"
                 fill
                 priority
+
+                fetchPriority="high"
                 className="object-cover object-top opacity-50 md:opacity-70"
                 alt=""
             />
@@ -20,6 +22,7 @@ export default function HeroBackground() {
                 src="/new/heroGradient.svg"
                 fill
                 priority
+                fetchPriority="high"
                 className="object-cover object-top opacity-70 md:opacity-90"
                 alt=""
             />

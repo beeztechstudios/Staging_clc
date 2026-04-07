@@ -58,9 +58,10 @@ export default function HeroAnimations() {
       });
 
       // Counter animation
-      document.querySelectorAll(".counter").forEach((el: any) => {
-        const value = parseInt(el.dataset.value);
-        const suffix = el.dataset.suffix || "";
+      document.querySelectorAll(".counter").forEach((el) => {
+        const htmlel = el as HTMLElement;
+        const value = parseInt(htmlel.dataset.value || "0");
+        const suffix = htmlel.dataset.suffix || "";
 
         const obj = { val: 0 };
 
@@ -69,12 +70,12 @@ export default function HeroAnimations() {
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: el,
+            trigger: htmlel,
             start: "top 90%",
             once: true,
           },
           onUpdate: () => {
-            el.innerText = Math.floor(obj.val) + suffix;
+            htmlel.innerText = Math.floor(obj.val) + suffix;
           },
         });
       });

@@ -1,36 +1,38 @@
+
 "use client";
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import HeroAnimations from "@/lib/heroAnimation";
 import HeroBackground from "@/components/HeroBackground";
-
-// Dynamic imports for components not needed for initial paint (FCP/LCP)
-const Carousel = dynamic(() => import("@/components/ui/carousel").then(m => m.Carousel), { ssr: false });
-const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(m => m.CarouselContent), { ssr: false });
-const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(m => m.CarouselItem), { ssr: false });
-const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(m => m.CarouselNext), { ssr: false });
-const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(m => m.CarouselPrevious), { ssr: false });
-const TeamMember = dynamic(() => import("@/components/TeamMember"), { ssr: false });
-
-import { teamMembers } from "@/components/TeamMember";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import TeamMember, { teamMembers } from "@/components/TeamMember";
 const distinctions = [
   {
+    src: "/vivek.png",
+    alt: "Boutique Law Practice",
     text: "Boutique law practice specializing in GST law services, Customs, and commercial dispute resolution",
   },
   {
+    src: "/shreyash.png",
+    alt: "Supreme Court",
     text: "Led by top tax lawyers in India with deep advisory and litigation expertise",
   },
   {
+    src: "/images/deepak.jpg",
+    alt: "Business Law Chambers",
     text: "Business law chambers with a Pan-India legal network and seamless multi-jurisdictional coverage",
   },
   {
+    src: "/images/vivek.png",
+    alt: "Top Tax Lawyers",
     text: "Research-intensive, precedent-driven legal strategy",
   },
   {
+    src: "/images/vivek.png",
+    alt: "Top Tax Lawyers",
     text: "Regular representation before the Supreme Court of India",
   },
 ];
@@ -317,29 +319,27 @@ const Hero = () => {
           })}
         </div>
 
-        {Carousel && (
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            className="hidden w-full px-10 lg:block"
-          >
-            <CarouselContent className="-ml-4">
-              {Object.values(teamMembers).map((member) => {
-                return (
-                  <CarouselItem
-                    key={member.id}
-                    className="pl-4 basis-1/2"
-                  >
-                    <TeamMember member={member} />
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="hidden w-full px-10 lg:block"
+        >
+          <CarouselContent className="-ml-4">
+            {Object.values(teamMembers).map((member) => {
+              return (
+                <CarouselItem
+                  key={member.id}
+                  className="pl-4 basis-1/2"
+                >
+                  <TeamMember member={member} />
 
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
 
-            <CarouselPrevious className="left-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
-            <CarouselNext className="right-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
-          </Carousel>
-        )}
+          <CarouselPrevious className="left-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
+          <CarouselNext className="right-0 top-[42%] border-[#163C0F]/30 text-[#163C0F]" />
+        </Carousel>
         <Link
           href="/team"
           className="inline-flex items-center mt-5 hero-text-meta text-[#163C0F] hover:underline mb-0"
