@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter, League_Spartan } from "next/font/google"; // Import next/font
 import "./globals.css";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  variable: "--font-league-spartan",
+  display: "swap",
+});
 
 /**
  * Global metadata (defaults). Per-page metadata will override these.
@@ -117,39 +130,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN">
-      <head>
-        {/* Resource hints */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-        {/* Preload LCP images (as per SEO doc) */}
-        <link rel="preload" as="image" href="/clc-logo.png" fetchPriority="high" />
-        {/* <link rel="preload" as="image" href="/bgpattern.png" fetchPriority="high" /> */}
-        <link rel="preload" as="image" href="/bgpattern.webp" fetchPriority="high" />
-
-        {/* Preconnect + Preload Google Fonts (League Spartan as in SEO doc) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
-        </noscript>
-      </head>
-
-      <body className="antialiased">
+    <html lang="en-IN" className={`${inter.variable} ${leagueSpartan.variable}`}>
+      <body className="antialiased font-sans">
 
         {/* Google Tag Manager (script) */}
         <Script id="gtm-script" strategy="afterInteractive">
@@ -187,7 +169,6 @@ export default function RootLayout({
 
         {/* JSON-LD Structured Data (LocalBusiness + LegalService) */}
         <Script id="local-schema" type="application/ld+json" strategy="afterInteractive">
-
           {JSON.stringify(localBusinessLD)}
         </Script>
 
@@ -201,41 +182,10 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Noscript fallbacks for pixels (image beacons) */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
-          />
-        </noscript>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src="https://px.ads.linkedin.com/collect/?pid=XXXXXXXX&fmt=gif"
-          />
-        </noscript>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src="https://ct.pinterest.com/v3/?tid=XXXXXXXXXXXXXXX&event=init&noscript=1"
-          />
-        </noscript>
-
         {/* App root (children) */}
         <ReactQueryProvider>
           {children}
         </ReactQueryProvider>
-
-        {/* Small inline performance hint: you may also add prefetch/prefetch links per page */}
       </body>
     </html>
   );
