@@ -73,12 +73,13 @@ const Hero = () => {
               Our Commitment
             </Link>
 
-            <Link
-              href="/about"
+            <a
+              href="/CLCFirmProfile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero-text-button bg-white sm:hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 flex min-h-[44px] w-full max-w-[100%] sm:max-w-[280px] items-center justify-center gap-[10px] px-[14px] py-[8px] text-center hover:bg-gray-50 transition-all sm:h-[40px] sm:w-[166px]">
               Review Firm Profile
-
-            </Link>
+            </a>
           </div>
         </div>
 
