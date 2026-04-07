@@ -11,10 +11,10 @@ export default function HeroAnimations() {
     const ctx = gsap.context(() => {
       // Page-level title (with span children — Hero page)
       gsap.from(".hero-title span", {
-        y: 40,
+        y: 20,
         opacity: 0,
-        duration: 1,
-        stagger: 0.2,
+        duration: 0.7,
+        stagger: 0.1,
         ease: "power3.out",
       });
 
@@ -23,38 +23,38 @@ export default function HeroAnimations() {
         // Skip if it has span children (already handled above)
         if (el.querySelectorAll("span").length > 0) return;
         gsap.from(el, {
-          y: 30,
+          y: 20,
           opacity: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
+            start: "top 95%",
             once: true,
           },
         });
       });
 
       gsap.from(".hero-subtitle", {
-        y: 20,
+        y: 15,
         opacity: 0,
-        delay: 0.4,
-        duration: 0.8,
+        delay: 0.2,
+        duration: 0.6,
       });
 
       gsap.from(".hero-buttons", {
-        y: 20,
+        y: 15,
         opacity: 0,
-        delay: 0.6,
-        duration: 0.8,
+        delay: 0.3,
+        duration: 0.6,
       });
 
       gsap.from(".hero-stat", {
-        y: 20,
+        y: 15,
         opacity: 0,
-        stagger: 0.2,
-        delay: 0.4,
-        duration: 0.8,
+        stagger: 0.1,
+        delay: 0.2,
+        duration: 0.6,
       });
 
       // Counter animation
@@ -66,11 +66,11 @@ export default function HeroAnimations() {
 
         gsap.to(obj, {
           val: value,
-          duration: 1.4,
+          duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 90%",
             once: true,
           },
           onUpdate: () => {
@@ -81,28 +81,28 @@ export default function HeroAnimations() {
 
       // subtle background movement
       gsap.to(".hero-circle", {
-        y: 20,
+        y: 15,
         repeat: -1,
         yoyo: true,
-        duration: 6,
+        duration: 5,
         ease: "sine.inOut",
       });
       // paragraph animation
       gsap.from(".hero-para", {
-        y: 25,
+        y: 20,
         opacity: 0,
-        duration: 0.9,
-        delay: 0.5,
+        duration: 0.7,
+        delay: 0.3,
         ease: "power3.out",
       });
 
       // buttons animation
       gsap.from(".hero-btn", {
-        y: 20,
+        y: 15,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        delay: 0.7,
+        duration: 0.6,
+        stagger: 0.1,
+        delay: 0.4,
         ease: "power3.out",
       });
     });

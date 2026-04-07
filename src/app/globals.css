@@ -54,10 +54,10 @@
 @layer base {
   body {
     @apply font-sans bg-white text-black;
-    background-image: url("/new/Overlay.png");
+    /* background-image: url("/new/Overlay.png");
     background-size: cover;
     background-position: top;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
   }
 
   @media (min-width: 1024px) {

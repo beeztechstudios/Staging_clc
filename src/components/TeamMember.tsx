@@ -177,6 +177,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                     width={120}
                     height={120}
                     className="w-full h-full object-cover"
+                    sizes="120px"
                     loading="lazy"
                   />
                 ) : (
@@ -378,6 +379,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
               width={120}
               height={120}
               className="w-full h-full object-cover"
+              sizes="120px"
               loading="lazy"
             />
           ) : (

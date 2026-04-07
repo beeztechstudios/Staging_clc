@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image"; // Add this line
 import { Inter, League_Spartan } from "next/font/google"; // Import next/font
 import "./globals.css";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
@@ -183,9 +184,20 @@ export default function RootLayout({
         </noscript>
 
         {/* App root (children) */}
-        <ReactQueryProvider>
-          {children}
-        </ReactQueryProvider>
+        <div className="relative isolate min-h-screen">
+          <Image
+            src="/new/Overlay.png"
+            alt=""
+            fill
+            priority
+            className="pointer-events-none -z-10 object-cover object-top opacity-100"
+            sizes="100vw"
+            quality={75}
+          />
+          <ReactQueryProvider>
+            {children}
+          </ReactQueryProvider>
+        </div>
       </body>
     </html>
   );
