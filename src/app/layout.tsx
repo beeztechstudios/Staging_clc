@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Inter, League_Spartan } from "next/font/google"; // Import next/font
 import "./globals.css";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
+import GlobalBackground from "@/components/GlobalBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -130,6 +131,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${inter.variable} ${leagueSpartan.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+      </head>
       <body className="antialiased font-sans">
 
         {/* Google Tag Manager (script) */}
@@ -144,9 +149,9 @@ export default function RootLayout({
         {/* Google Analytics (gtag) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -156,7 +161,7 @@ export default function RootLayout({
         </Script>
 
         {/* Microsoft Clarity */}
-        <Script id="clarity" strategy="afterInteractive">
+        <Script id="clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a] = c[a] || function(){ (c[a].q = c[a].q || []).push(arguments) };
@@ -182,6 +187,7 @@ export default function RootLayout({
         </noscript>
 
         {/* App root (children) */}
+        <GlobalBackground />
         <ReactQueryProvider>
           {children}
         </ReactQueryProvider>
